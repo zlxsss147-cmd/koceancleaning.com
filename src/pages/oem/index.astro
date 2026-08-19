@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const process = [
+  {
+    step: '01',
+    title: 'Tell us what you need',
+    desc: 'Share your sample, drawing, or a reference product. Include target quantity, packaging and any certifications.',
+  },
+  {
+    step: '02',
+    title: 'Sample & specification',
+    desc: 'We develop a sample and a detailed spec sheet — materials, dimensions, weight, color and packing.',
+  },
+  {
+    step: '03',
+    title: 'Quote & contract',
+    desc: 'A clear quotation with payment terms, lead time and shipping options. No hidden costs.',
+  },
+  {
+    step: '04',
+    title: 'Production & inspection',
+    desc: 'Inline quality checks during production. Final inspection before shipment with photo/video report.',
+  },
+  {
+    step: '05',
+    title: 'Delivery & after-sales',
+    desc: 'On-time shipment with full documentation. We stay in touch after delivery, not just before it.',
+  },
+];
+
+const capabilities = [
+  'Custom sizes, colors and weights',
+  'Private label & custom logo printing',
+  'Custom packaging (bags, boxes, display cartons)',
+  'Bulk fabric rolls or finished goods',
+  'B2B certification support (on request)',
+  'Mixed-container & consolidated shipping',
+];
+---
+
+<BaseLayout title="OEM / ODM" description="Private label cleaning products from factory to your brand. Custom sizes, materials, packaging and quality control — Kocean OEM/ODM capabilities.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">OEM / ODM</p>
+      <h1>Your brand. Our factory.</h1>
+      <p class="lead">From your idea or sample to a finished, private-labeled product — with the quality control of a manufacturer, not a middleman.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">How it works</p>
+        <h2>A simple five-step path from idea to shipment</h2>
+      </div>
+      <div class="process-grid">
+        {process.map((p) => (
+          <div class="process-step">
+            <span class="step-num">{p.step}</span>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Capabilities</p>
+        <h2>What we can do for your brand</h2>
+      </div>
+      <div class="cap-grid">
+        {capabilities.map((c) => (
+          <div class="cap-item">
+            <span class="cap-check">✓</span>
+            <span>{c}</span>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-4">
+        <a href="/contact/" class="btn btn--primary">Start your project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--teal note">
+    <div class="container">
+      <h2>One honest note on certification</h2>
+      <p>
+        We can support B2B certification requirements on request. Tell us which market you're selling into
+        and which certificates your customer expects — we'll confirm what we can provide before you commit.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, #f4faf9 0%, #ffffff 100%);
+    padding: 68px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero .kicker {
+    color: var(--orange-500);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+  .page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); margin-bottom: 14px; }
+  .page-hero .lead { color: var(--ink-soft); font-size: 1.08rem; max-width: 640px; }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+  .process-step {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+    box-shadow: var(--shadow-sm);
+  }
+  .step-num {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--orange-500);
+    letter-spacing: 0.12em;
+  }
+  .process-step h3 { font-size: 1.02rem; margin: 10px 0 8px; color: var(--teal-800); }
+  .process-step p { font-size: 0.88rem; color: var(--ink-muted); }
+
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .cap-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .cap-check {
+    color: var(--teal-600);
+    font-weight: 800;
+  }
+
+  .note {
+    text-align: center;
+  }
+  .note h2 { margin-bottom: 14px; }
+  .note p {
+    color: #c4d8d5;
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.02rem;
+  }
+
+  @media (max-width: 900px) {
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .process-grid, .cap-grid { grid-template-columns: 1fr; }
+  }
+</style>

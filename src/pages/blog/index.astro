@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = [
+  'All',
+  'Nonwoven Materials',
+  'Buying Guides',
+  'Applications',
+  'OEM & Quality',
+  'Industry & Sustainability',
+];
+---
+
+<BaseLayout title="Knowledge Hub" description="Practical buying guides and material knowledge for microfiber cleaning products and nonwovens — written for professional buyers.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">Knowledge Hub</p>
+      <h1>Buying guides for professional cleaning products</h1>
+      <p class="lead">Material science, product selection and sourcing guidance — written for buyers, distributors and brands.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        {categories.map((c) => (
+          <a
+            href={c === 'All' ? '/blog/' : `/blog/category/${c.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-')}/`}
+            class:list={['filter-chip', { 'is-active': !Astro.url.searchParams.get('cat') && c === 'All' }]}
+          >{c}</a>
+        ))}
+      </div>
+
+      {allPosts.length > 0 ? (
+        <div class="post-grid">
+          {allPosts.map((post) => (
+            <a href={`/blog/${post.slug}/`} class="card post-card">
+              <div class="post-meta">
+                <span class="post-cat">{post.data.category}</span>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </time>
+              </div>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              <span class="post-link">Read more →</span>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="empty">Articles are being prepared. Check back soon.</p>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, #f4faf9 0%, #ffffff 100%);
+    padding: 68px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero .kicker {
+    color: var(--orange-500);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+  .page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); margin-bottom: 14px; }
+  .page-hero .lead { color: var(--ink-soft); font-size: 1.08rem; max-width: 640px; }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .filter-chip {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: #fff;
+  }
+  .filter-chip:hover {
+    border-color: var(--teal-500);
+    color: var(--teal-700);
+  }
+  .filter-chip.is-active {
+    background: var(--teal-800);
+    border-color: var(--teal-800);
+    color: #fff;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .post-card {
+    padding: 26px;
+    color: var(--ink);
+  }
+  .post-card:hover { color: var(--ink); }
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+  }
+  .post-cat {
+    background: var(--teal-50);
+    color: var(--teal-700);
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .post-meta time { color: var(--ink-muted); }
+  .post-card h2 {
+    font-size: 1.14rem;
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+  .post-card p {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+  }
+  .post-link {
+    color: var(--teal-700);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .empty {
+    text-align: center;
+    color: var(--ink-muted);
+    padding: 60px 0;
+  }
+
+  @media (max-width: 900px) {
+    .post-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .post-grid { grid-template-columns: 1fr; }
+  }
+</style>

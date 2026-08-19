@@ -1,0 +1,452 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, COMPANY, PRODUCT_CATEGORIES } from '../data/site';
+import { getCollection } from 'astro:content';
+
+const recentPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const stats = [
+  { value: '2009', label: 'Established' },
+  { value: '65+', label: 'Countries served' },
+  { value: '4 wks', label: 'Avg. lead time' },
+  { value: '100%', label: 'Inspection before shipment' },
+];
+
+const pillars = [
+  {
+    title: 'Microfiber Expertise',
+    desc: 'Woven and knitted microfiber from raw yarn to finished cloth — we supervise every step.',
+  },
+  {
+    title: 'OEM / ODM Ready',
+    desc: 'Private label, custom size, custom packaging. From your sketch to your brand.',
+  },
+  {
+    title: 'Direct from Factory',
+    desc: 'Manufacturer-and-trader model backed by our partner mill in Fujian, China.',
+  },
+  {
+    title: 'Quality You Can Audit',
+    desc: 'Pre-production samples, inline checks and final inspection before every shipment.',
+  },
+];
+---
+
+<BaseLayout>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="kicker">Microfiber Cleaning Expert · Since 2009</p>
+        <h1>Your manufacturer partner for <span class="accent">microfiber cleaning</span> & nonwoven products</h1>
+        <p class="lead">
+          Kocean manufactures and exports cleaning cloths, mops, sponges and nonwoven fabrics to
+          65+ countries — with OEM/ODM support, factory-direct pricing and quality you can audit.
+        </p>
+        <div class="hero-actions">
+          <a href="/contact/" class="btn btn--primary">Request a Quote</a>
+          <a href="/products/" class="btn btn--ghost">Browse Products</a>
+        </div>
+        <p class="hero-trust">
+          Trusted by importers, distributors and brands in Europe &amp; the Americas.
+        </p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card">
+          <div class="visual-badge">🔬</div>
+          <h3>Nonwoven Materials</h3>
+          <p>Spunlace · Spunbond · Meltblown · Needle-punched</p>
+        </div>
+        <div class="visual-card">
+          <div class="visual-badge">🧹</div>
+          <h3>Finished Cleaning Tools</h3>
+          <p>Mops · Cloths · Sponges · Wipes · Car care</p>
+        </div>
+        <div class="visual-card">
+          <div class="visual-badge">🏭</div>
+          <h3>Factory-Backed</h3>
+          <p>Manufacturer + trading model with quality control</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      {stats.map((s) => (
+        <div class="stat">
+          <strong>{s.value}</strong>
+          <span>{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PRODUCT CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Our Products</p>
+        <h2>Seven core categories, one quality standard</h2>
+        <p>From raw nonwoven fabric to finished cleaning tools — developed, produced and inspected under one roof.</p>
+      </div>
+      <div class="cat-grid">
+        {PRODUCT_CATEGORIES.map((cat, i) => (
+          <a href={`/products/#${cat.slug}`} class="card cat-card">
+            <span class="cat-index">0{i + 1}</span>
+            <h3>{cat.title}</h3>
+            <p>{cat.short}</p>
+            <span class="cat-link">Explore →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / PILLARS -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Why Kocean</p>
+        <h2>Built for importers who care about consistency</h2>
+      </div>
+      <div class="pillar-grid">
+        {pillars.map((p) => (
+          <div class="pillar">
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTORY BACKING -->
+  <section class="section section--teal factory">
+    <div class="container factory-inner">
+      <div>
+        <p class="kicker kicker--light">Factory Backing</p>
+        <h2>Not just a trading company. A manufacturing partner.</h2>
+        <p class="factory-text">
+          Kocean operates as a manufacturer-and-trader: our partner mill in Fujian, China produces
+          nonwoven fabric and finished goods with our supervision at every stage — from raw fiber to
+          inspection and packing.
+        </p>
+      </div>
+      <div class="factory-points">
+        <ul>
+          <li><strong>Raw fiber → finished product</strong> — full production supervision</li>
+          <li><strong>In-house development</strong> — half-automatic machines for stable quality</li>
+          <li><strong>Competitive pricing</strong> — direct factory cost, no middle layers</li>
+          <li><strong>Pre-shipment inspection</strong> — every order, every time</li>
+        </ul>
+        <a href="/oem/" class="btn btn--light mt-3">See OEM / ODM Capabilities →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST FROM KNOWLEDGE HUB -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Knowledge Hub</p>
+        <h2>Buying guides for professional cleaning products</h2>
+        <p>Practical, honest guidance on materials and products — written for buyers, not for search engines.</p>
+      </div>
+      {recentPosts.length > 0 ? (
+        <div class="post-grid">
+          {recentPosts.map((post) => (
+            <a href={`/blog/${post.slug}/`} class="card post-card">
+              <div class="post-meta">
+                <span class="post-cat">{post.data.category}</span>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </time>
+              </div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <span class="post-link">Read more →</span>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="text-center">Articles coming soon.</p>
+      )}
+      <div class="text-center mt-4">
+        <a href="/blog/" class="btn btn--ghost">Visit the Knowledge Hub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta">
+    <div class="container cta-box">
+      <div>
+        <h2>Have a product in mind?</h2>
+        <p>Send us your specification or sample — we reply within 24 hours on business days.</p>
+      </div>
+      <a href="/contact/" class="btn btn--primary">Get a Quote →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(1000px 400px at 85% -10%, rgba(31, 138, 131, 0.18), transparent 60%),
+      linear-gradient(180deg, #f4faf9 0%, #ffffff 100%);
+    padding: 88px 0 72px;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero .kicker {
+    color: var(--orange-500);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4.6vw, 3.2rem);
+    margin-bottom: 20px;
+  }
+  .hero h1 .accent {
+    color: var(--teal-700);
+  }
+  .hero .lead {
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    max-width: 540px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .hero-trust {
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+  .hero-visual {
+    display: grid;
+    gap: 16px;
+  }
+  .visual-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .visual-badge {
+    font-size: 1.9rem;
+  }
+  .visual-card h3 {
+    font-size: 1.02rem;
+    margin-bottom: 3px;
+  }
+  .visual-card p {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+  }
+
+  /* Stats */
+  .stats {
+    background: var(--teal-900);
+    padding: 34px 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .stat {
+    text-align: center;
+    color: #e7f2f0;
+  }
+  .stat strong {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  .stat span {
+    font-size: 0.88rem;
+    color: #9fb9b5;
+  }
+
+  /* Category grid */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .cat-card {
+    padding: 26px;
+    position: relative;
+    color: var(--ink);
+  }
+  .cat-card:hover { color: var(--ink); }
+  .cat-index {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--orange-500);
+    letter-spacing: 0.1em;
+  }
+  .cat-card h3 {
+    font-size: 1.18rem;
+    margin: 10px 0 8px;
+  }
+  .cat-card p {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+  .cat-link {
+    color: var(--teal-700);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Pillars */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .pillar {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .pillar h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: var(--teal-800);
+  }
+  .pillar p {
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+  }
+
+  /* Factory */
+  .factory-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .kicker--light {
+    color: #f5a37c !important;
+  }
+  .factory h2 {
+    margin-bottom: 16px;
+  }
+  .factory-text {
+    color: #c4d8d5;
+    font-size: 1.05rem;
+  }
+  .factory-points ul {
+    list-style: none;
+  }
+  .factory-points li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #dcebe9;
+    font-size: 0.97rem;
+  }
+  .factory-points li strong {
+    color: #fff;
+  }
+
+  /* Posts */
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .post-card {
+    padding: 26px;
+    color: var(--ink);
+  }
+  .post-card:hover { color: var(--ink); }
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+  }
+  .post-cat {
+    background: var(--teal-50);
+    color: var(--teal-700);
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .post-meta time {
+    color: var(--ink-muted);
+  }
+  .post-card h3 {
+    font-size: 1.12rem;
+    margin-bottom: 10px;
+  }
+  .post-card p {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+  }
+  .post-link {
+    color: var(--teal-700);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* CTA */
+  .cta-box {
+    background: linear-gradient(120deg, var(--orange-500), var(--orange-600));
+    border-radius: var(--radius);
+    padding: 44px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    color: #fff;
+    box-shadow: var(--shadow-lg);
+  }
+  .cta-box h2 {
+    color: #fff;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+  }
+  .cta-box p {
+    color: #ffe9dd;
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .cat-grid, .pillar-grid, .post-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .factory-inner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .cat-grid, .pillar-grid, .post-grid { grid-template-columns: 1fr; }
+    .cta-box { flex-direction: column; text-align: center; }
+  }
+</style>

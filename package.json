@@ -1,0 +1,15 @@
+{
+  "name": "koceancleaning.com",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kocean Cleaning - Microfiber cleaning & nonwovens manufacturer-trading company. B2B site (SEO + authority).",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  }
+}

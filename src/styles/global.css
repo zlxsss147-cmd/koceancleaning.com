@@ -1,0 +1,198 @@
+/* ============================================================
+   Kocean Cleaning - Global Styles
+   B2B industrial-cleaning aesthetic: deep teal + orange accent
+   ============================================================ */
+
+:root {
+  /* Brand palette */
+  --teal-900: #0b3d3a;
+  --teal-800: #0e4a46;
+  --teal-700: #125b56;
+  --teal-600: #17706a;
+  --teal-500: #1f8a83;
+  --teal-100: #d9efec;
+  --teal-50: #eef7f6;
+  --orange-500: #e8622c;
+  --orange-600: #d0541f;
+  --orange-50: #fdf1ea;
+
+  /* Neutral */
+  --ink: #1a2428;
+  --ink-soft: #44555c;
+  --ink-muted: #6b7c83;
+  --line: #e3e9ea;
+  --bg: #ffffff;
+  --bg-soft: #f6f8f8;
+
+  /* Type */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --container: 1180px;
+  --radius: 14px;
+  --shadow-sm: 0 1px 3px rgba(11, 61, 58, 0.08);
+  --shadow-md: 0 6px 24px rgba(11, 61, 58, 0.1);
+  --shadow-lg: 0 16px 48px rgba(11, 61, 58, 0.16);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--teal-700);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--orange-500);
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* Layout helpers */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section--soft {
+  background: var(--bg-soft);
+}
+
+.section--teal {
+  background: var(--teal-900);
+  color: #e7f2f0;
+}
+
+.section--teal h2,
+.section--teal h3 {
+  color: #fff;
+}
+
+.section-head {
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.section-head .kicker {
+  color: var(--orange-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  margin-bottom: 14px;
+}
+
+.section-head p {
+  color: var(--ink-muted);
+  font-size: 1.06rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn--primary {
+  background: var(--orange-500);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--orange-600);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--teal-500);
+  color: var(--teal-700);
+}
+
+.btn--ghost:hover {
+  background: var(--teal-50);
+  color: var(--teal-800);
+}
+
+.btn--light {
+  background: #fff;
+  color: var(--teal-900);
+}
+
+.btn--light:hover {
+  background: var(--teal-50);
+  color: var(--teal-900);
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Utility */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+
+@media (max-width: 768px) {
+  .section { padding: 52px 0; }
+}

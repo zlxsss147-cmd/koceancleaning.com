@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PRODUCT_CATEGORIES } from '../data/site';
+
+const categoryDetails = {
+  'microfiber-cleaning': {
+    desc: 'Microfiber cloths, towels and wipes in woven and knitted constructions, from 200gsm terry to ultra-light 180gsm flat weave. Custom sizes, colors and edge finishing.',
+    items: ['Microfiber cleaning cloths', 'Microfiber towels & chamois', 'Glass & screen cloths', 'Dusting cloths', 'Waffle & terry weaves'],
+  },
+  mops: {
+    desc: 'Flat mops, spray mops, Kentucky mops and twist mops with microfiber and nonwoven heads. Complete mop systems or replacement heads for your existing line.',
+    items: ['Flat mop systems & refills', 'Spray mops', 'Kentucky (wetten) mops', 'Twist mops', 'Mop heads & frames'],
+  },
+  sponges: {
+    desc: 'Kitchen sponges, scrub pads and scouring sponges with cellulose, PU and nonwoven layers. Custom die-cutting, printing and packaging.',
+    items: ['Cellulose kitchen sponges', 'Scrub & scouring pads', 'Non-scratch sponges', 'Dishwashing sets', 'Industrial scrubbing sponges'],
+  },
+  'car-cleaning': {
+    desc: 'Microfiber car care towels, drying towels, wash mitts and detailing sets built for automotive professionals and detailing brands.',
+    items: ['Drying towels', 'Wash mitts & pads', 'Interior detailing cloths', 'Glass & polish towels', 'Detailing kits'],
+  },
+  nonwovens: {
+    desc: 'Spunlace, spunbond, meltblown and needle-punched nonwoven fabrics in a wide range of weights and finishes. The raw material base behind our finished products.',
+    items: ['Spunlace nonwoven (hydroentangled)', 'Spunbond (PP / PET)', 'Meltblown (filtration & medical)', 'Needle-punched felt', 'Coated & laminated nonwovens'],
+  },
+  'wet-wipes': {
+    desc: 'Wet tissue and moist wipes for home, car care and healthcare. Alcohol-free formulas, custom scent, custom dispensing formats.',
+    items: ['Household wet wipes', 'Car care wipes', 'Healthcare & sanitizing wipes', 'Pet wipes', 'Custom formulations'],
+  },
+  'home-series': {
+    desc: 'Household cleaning helpers: dusting gloves, cleaning slippers, dusters and small home-care accessories that make daily cleaning easier.',
+    items: ['Dusting gloves', 'Cleaning slippers', 'Dusters & duster sets', 'Microfiber cleaning mitts', 'Home care accessories'],
+  },
+};
+---
+
+<BaseLayout title="Products" description="Microfiber cleaning cloths, mops, sponges, car cleaning, nonwovens, wet wipes and home cleaning series — OEM/ODM welcome from Kocean.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">Our Products</p>
+      <h1>Cleaning products, engineered for professionals</h1>
+      <p class="lead">Seven categories. One quality standard. Every item available with your brand, your size, your packaging.</p>
+    </div>
+  </section>
+
+  {PRODUCT_CATEGORIES.map((cat, i) => {
+    const detail = categoryDetails[cat.slug];
+    return (
+      <section class:list={['section', 'cat-block', { 'section--soft': i % 2 === 1 }]} id={cat.slug}>
+        <div class="container cat-inner">
+          <div class="cat-visual">
+            <span class="cat-num">{String(i + 1).padStart(2, '0')}</span>
+            <h2>{cat.title}</h2>
+            <p class="cat-desc">{detail.desc}</p>
+          </div>
+          <ul class="cat-items">
+            {detail.items.map((item) => (
+              <li>{item}</li>
+            ))}
+            <li class="cat-cta">
+              <a href="/contact/" class="btn btn--ghost">Request details →</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section cta">
+    <div class="container cta-box">
+      <div>
+        <h2>Need something custom?</h2>
+        <p>Tell us the product, the spec and the quantity — we'll come back with a quote and a timeline.</p>
+      </div>
+      <a href="/contact/" class="btn btn--primary">Get a Quote →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, #f4faf9 0%, #ffffff 100%);
+    padding: 68px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero .kicker {
+    color: var(--orange-500);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+  .page-hero h1 {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    margin-bottom: 14px;
+  }
+  .page-hero .lead {
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+    max-width: 640px;
+  }
+
+  .cat-block {
+    scroll-margin-top: 90px;
+  }
+  .cat-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .cat-num {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--orange-500);
+    letter-spacing: 0.14em;
+  }
+  .cat-visual h2 {
+    font-size: 1.6rem;
+    margin: 10px 0 14px;
+  }
+  .cat-desc {
+    color: var(--ink-muted);
+    font-size: 1rem;
+  }
+  .cat-items {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .cat-items li {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    box-shadow: var(--shadow-sm);
+  }
+  .section--soft .cat-items li {
+    background: #fff;
+  }
+  .cat-items .cat-cta {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 8px 0;
+  }
+
+  .cta-box {
+    background: linear-gradient(120deg, var(--teal-800), var(--teal-700));
+    border-radius: var(--radius);
+    padding: 44px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    color: #fff;
+    box-shadow: var(--shadow-lg);
+  }
+  .cta-box h2 { color: #fff; font-size: 1.6rem; margin-bottom: 8px; }
+  .cta-box p { color: #c4d8d5; }
+
+  @media (max-width: 768px) {
+    .cat-inner { grid-template-columns: 1fr; gap: 24px; }
+    .cta-box { flex-direction: column; text-align: center; }
+  }
+</style>

@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { COMPANY } from '../data/site';
+
+const timeline = [
+  { year: '2009', text: 'Kocean founded in Yiwu, China, as a microfiber cleaning product supplier.' },
+  { year: '2014', text: 'Expanded product line to nonwoven materials and finished cleaning tools.' },
+  { year: '2020', text: 'Joined the Zhejiang E-Sun group, strengthening factory backing and export capability.' },
+  { year: 'Today', text: 'Exporting to 65+ countries with a 25-person team and a partner mill in Fujian, China.' },
+];
+---
+
+<BaseLayout title="About Us" description="Kocean (Yiwu Kocean Import & Export Co., Ltd) — manufacturer and trading company of microfiber cleaning products and nonwovens, exporting to 65+ countries since 2009.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">About Kocean</p>
+      <h1>A manufacturer-trading company that controls the process</h1>
+      <p class="lead">We build cleaning products the way they should be built: from raw fiber to finished goods, with our own supervision at every stage.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <p class="kicker">Who we are</p>
+        <h2>We are not a middleman. We are a manufacturing partner.</h2>
+        <p>
+          {COMPANY.legalName} is a manufacturer and trading company specializing in microfiber cleaning
+          products and nonwoven materials. We supervise the entire production process — from raw fiber to
+          finished product, inspection and packing — so the quality you receive is the quality we control.
+        </p>
+        <p>
+          Our in-house development team builds half-automatic machines for finished products such as wet
+          mops, flat mops and mats. These machines keep our prices competitive and our quality consistent —
+          because a machine is easier to control than hand labor.
+        </p>
+        <p>
+          We export to markets including Germany, the UK, Poland, Spain and the Americas, with a simple
+          promise: quality first, customer first, and a partnership that outlasts any single order.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>At a glance</h3>
+        <ul>
+          <li><strong>Founded</strong> 2009</li>
+          <li><strong>Location</strong> Yiwu, Zhejiang, China</li>
+          <li><strong>Team</strong> 25 professionals</li>
+          <li><strong>Export markets</strong> 65+ countries</li>
+          <li><strong>Model</strong> Manufacturer + trading</li>
+          <li><strong>Partner mill</strong> Fujian, China</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Our journey</p>
+        <h2>From a Yiwu supplier to a manufacturing partner</h2>
+      </div>
+      <div class="timeline">
+        {timeline.map((t) => (
+          <div class="tl-item">
+            <span class="tl-year">{t.year}</span>
+            <span class="tl-dot"></span>
+            <p>{t.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container cta-box">
+      <div>
+        <h2>Let's build something together</h2>
+        <p>Send us your product idea or requirement — we'll get back to you within 24 hours on business days.</p>
+      </div>
+      <a href="/contact/" class="btn btn--primary">Contact Us →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, #f4faf9 0%, #ffffff 100%);
+    padding: 68px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero .kicker {
+    color: var(--orange-500);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+  .page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); margin-bottom: 14px; }
+  .page-hero .lead { color: var(--ink-soft); font-size: 1.08rem; max-width: 640px; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-copy .kicker {
+    color: var(--orange-500);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+  .about-copy h2 { font-size: 1.8rem; margin-bottom: 18px; }
+  .about-copy p {
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    font-size: 1.02rem;
+  }
+  .about-card {
+    background: var(--teal-50);
+    border: 1px solid var(--teal-100);
+    border-radius: var(--radius);
+    padding: 30px 28px;
+  }
+  .about-card h3 { font-size: 1.1rem; color: var(--teal-800); margin-bottom: 18px; }
+  .about-card ul { list-style: none; }
+  .about-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--teal-100);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .about-card li:last-child { border-bottom: none; }
+  .about-card li strong { color: var(--teal-800); font-weight: 600; }
+
+  .timeline {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 90px 24px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 18px 0;
+    position: relative;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: 97px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--teal-100);
+  }
+  .tl-item:first-child::before { top: 50%; }
+  .tl-item:last-child::before { bottom: 50%; }
+  .tl-year {
+    font-weight: 800;
+    color: var(--teal-700);
+    font-size: 1.05rem;
+    text-align: right;
+  }
+  .tl-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--orange-500);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--orange-500);
+    z-index: 1;
+    justify-self: center;
+  }
+  .tl-item p { color: var(--ink-soft); font-size: 0.98rem; }
+
+  .cta-box {
+    background: linear-gradient(120deg, var(--teal-800), var(--teal-700));
+    border-radius: var(--radius);
+    padding: 44px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    color: #fff;
+    box-shadow: var(--shadow-lg);
+  }
+  .cta-box h2 { color: #fff; font-size: 1.6rem; margin-bottom: 8px; }
+  .cta-box p { color: #c4d8d5; }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .cta-box { flex-direction: column; text-align: center; }
+  }
+</style>
