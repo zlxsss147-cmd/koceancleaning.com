@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { COMPANY } from '../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { COMPANY } from '../../data/site';
 ---
 
 <BaseLayout title="Contact Us" description="Contact Kocean for quotes, samples and OEM projects. We reply within 24 hours on business days.">
@@ -70,7 +70,7 @@ import { COMPANY } from '../data/site';
           </li>
           <li>
             <span class="ci-label">WhatsApp</span>
-            <a href={`https://wa.me/${COMPANY.whatsapp.replace(/[^+\d]/g, '')}`} target="_blank" rel="noopener">{COMPANY.whatsapp}</a>
+            <a href={`https://wa.me/${COMPANY.whatsapp.replace(/[^\d]/g, '')}`} target="_blank" rel="noopener">{COMPANY.whatsapp}</a>
           </li>
           <li>
             <span class="ci-label">Address</span>

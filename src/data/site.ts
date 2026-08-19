@@ -17,9 +17,9 @@ export const COMPANY = {
   since: 2009,
   employees: 25,
   exportCountries: 65,
-  phone: '+86-579-00000000', // TODO: replace with real phone
-  email: 'sales@koceancleaning.com', // TODO: replace with real email
-  whatsapp: '+86-000-0000-0000', // TODO: replace with real WhatsApp
+  phone: '+86-579-87006734',
+  email: 'Yayo@koceancleaning.com',
+  whatsapp: '+8613738916022',
   address: 'Yiwu, Zhejiang, China',
 };
 

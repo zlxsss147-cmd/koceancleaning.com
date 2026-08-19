@@ -106,7 +106,7 @@ const pageImage = image ?? SITE.ogImage;
           <h4>Contact</h4>
           <p><a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></p>
           <p><a href={`tel:${COMPANY.phone.replace(/[^+\d]/g, '')}`}>{COMPANY.phone}</a></p>
-          <p><a href={`https://wa.me/${COMPANY.whatsapp.replace(/[^+\d]/g, '')}`} target="_blank" rel="noopener">WhatsApp</a></p>
+          <p><a href={`https://wa.me/${COMPANY.whatsapp.replace(/[^\d]/g, '')}`} target="_blank" rel="noopener">WhatsApp</a></p>
         </div>
       </div>
       <div class="container footer-bottom">
