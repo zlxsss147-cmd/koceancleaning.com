@@ -37,19 +37,19 @@ export const PRODUCT_CATEGORIES = [
     slug: 'microfiber-cleaning',
     title: 'Microfiber Cleaning',
     short: 'Cloths, towels & wipes in woven and knitted microfiber',
-    image: '/images/products/microfiber-cloth.jpg',
+    image: '/images/products/microfiber-cleaning.jpg',
   },
   {
     slug: 'mops',
     title: 'Mops',
     short: 'Flat mops, spray mops, Kentucky mops & twist mops',
-    image: '/images/products/mop.jpg',
+    image: '/images/products/mops.jpg',
   },
   {
     slug: 'sponges',
     title: 'Sponges & Scrubbers',
     short: 'Kitchen sponges, scrub pads & scouring pads',
-    image: '/images/products/sponge.jpg',
+    image: '/images/products/sponges.jpg',
   },
   {
     slug: 'car-cleaning',
@@ -61,7 +61,7 @@ export const PRODUCT_CATEGORIES = [
     slug: 'nonwovens',
     title: 'Nonwovens',
     short: 'Spunlace, spunbond, meltblown & needle-punched fabrics',
-    image: '/images/products/nonwoven.jpg',
+    image: '/images/products/nonwovens.jpg',
   },
   {
     slug: 'wet-wipes',
