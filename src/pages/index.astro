@@ -96,10 +96,15 @@ const pillars = [
       <div class="cat-grid">
         {PRODUCT_CATEGORIES.map((cat, i) => (
           <a href={`/products/#${cat.slug}`} class="card cat-card">
-            <span class="cat-index">0{i + 1}</span>
-            <h3>{cat.title}</h3>
-            <p>{cat.short}</p>
-            <span class="cat-link">Explore →</span>
+            <div class="cat-thumb">
+              <img src={cat.image} alt={cat.title} loading="lazy" />
+            </div>
+            <div class="cat-card-body">
+              <span class="cat-index">0{i + 1}</span>
+              <h3>{cat.title}</h3>
+              <p>{cat.short}</p>
+              <span class="cat-link">Explore →</span>
+            </div>
           </a>
         ))}
       </div>
@@ -296,25 +301,48 @@ const pillars = [
     gap: 22px;
   }
   .cat-card {
-    padding: 26px;
+    padding: 0;
     position: relative;
     color: var(--ink);
+    display: flex;
+    flex-direction: column;
   }
   .cat-card:hover { color: var(--ink); }
+  .cat-thumb {
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .cat-thumb img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+  .cat-card:hover .cat-thumb img {
+    transform: scale(1.04);
+  }
+  .cat-card-body {
+    padding: 22px 26px 26px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
   .cat-index {
     font-size: 0.78rem;
     font-weight: 700;
     color: var(--orange-500);
     letter-spacing: 0.1em;
   }
-  .cat-card h3 {
+  .cat-card-body h3 {
     font-size: 1.18rem;
     margin: 10px 0 8px;
   }
-  .cat-card p {
+  .cat-card-body p {
     color: var(--ink-muted);
     font-size: 0.92rem;
     margin-bottom: 18px;
+    flex: 1;
   }
   .cat-link {
     color: var(--teal-700);

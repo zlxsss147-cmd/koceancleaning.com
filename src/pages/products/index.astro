@@ -45,22 +45,28 @@ const categoryDetails = {
 
   {PRODUCT_CATEGORIES.map((cat, i) => {
     const detail = categoryDetails[cat.slug];
+    const isReverse = i % 2 === 1;
     return (
-      <section class:list={['section', 'cat-block', { 'section--soft': i % 2 === 1 }]} id={cat.slug}>
+      <section class:list={['section', 'cat-block', { 'cat-block--reverse': isReverse }]} id={cat.slug}>
         <div class="container cat-inner">
-          <div class="cat-visual">
+          <div class="cat-left">
+            <div class="cat-media">
+              <img src={cat.image} alt={cat.title} loading="lazy" />
+            </div>
             <span class="cat-num">{String(i + 1).padStart(2, '0')}</span>
             <h2>{cat.title}</h2>
             <p class="cat-desc">{detail.desc}</p>
           </div>
-          <ul class="cat-items">
-            {detail.items.map((item) => (
-              <li>{item}</li>
-            ))}
-            <li class="cat-cta">
-              <a href="/contact/" class="btn btn--ghost">Request details →</a>
-            </li>
-          </ul>
+          <div class="cat-right">
+            <ul class="cat-items">
+              {detail.items.map((item) => (
+                <li>{item}</li>
+              ))}
+              <li class="cat-cta">
+                <a href="/contact/" class="btn btn--ghost">Request details →</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     );
@@ -103,26 +109,51 @@ const categoryDetails = {
 
   .cat-block {
     scroll-margin-top: 90px;
+    padding: 56px 0;
+  }
+  .cat-block:nth-child(even) {
+    background: var(--bg-soft);
   }
   .cat-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 56px;
     align-items: start;
   }
+
+  .cat-media {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 22px;
+  }
+  .cat-media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
   .cat-num {
+    display: block;
     font-size: 0.82rem;
     font-weight: 800;
     color: var(--orange-500);
     letter-spacing: 0.14em;
+    margin-bottom: 10px;
   }
-  .cat-visual h2 {
+  .cat-left h2 {
     font-size: 1.6rem;
-    margin: 10px 0 14px;
+    margin-bottom: 12px;
   }
   .cat-desc {
     color: var(--ink-muted);
     font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .cat-right {
+    padding-top: 6px;
   }
   .cat-items {
     list-style: none;
@@ -138,7 +169,7 @@ const categoryDetails = {
     color: var(--ink-soft);
     box-shadow: var(--shadow-sm);
   }
-  .section--soft .cat-items li {
+  .cat-block:nth-child(even) .cat-items li {
     background: #fff;
   }
   .cat-items .cat-cta {
@@ -162,8 +193,14 @@ const categoryDetails = {
   .cta-box h2 { color: #fff; font-size: 1.6rem; margin-bottom: 8px; }
   .cta-box p { color: #c4d8d5; }
 
+  @media (min-width: 769px) {
+    .cat-block--reverse .cat-left { order: 2; }
+    .cat-block--reverse .cat-right { order: 1; }
+  }
+
   @media (max-width: 768px) {
-    .cat-inner { grid-template-columns: 1fr; gap: 24px; }
+    .cat-inner { grid-template-columns: 1fr; gap: 32px; }
+    .cat-block { padding: 42px 0; }
     .cta-box { flex-direction: column; text-align: center; }
   }
 </style>
