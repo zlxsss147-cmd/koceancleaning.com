@@ -20,6 +20,7 @@ export const COMPANY = {
   phone: '+86-579-87006734',
   email: 'Yayo@koceancleaning.com',
   whatsapp: '+8613738916022',
+  linkedin: 'https://www.linkedin.com/company/jinhua-saving-industry',
   address: 'Yiwu, Zhejiang, China',
 };
 
