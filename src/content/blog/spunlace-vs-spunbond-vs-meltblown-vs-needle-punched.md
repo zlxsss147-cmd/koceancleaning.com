@@ -114,7 +114,7 @@ Mapping the fabric to a concrete product line makes the choice obvious:
 
 Most misquotes happen because the brief is vague ("a good wiping cloth, around 60 grams"). Here is the minimum a supplier needs to quote accurately — copy it and fill in your target:
 
-```
+<pre class="spec-sheet">
 Product:            [e.g. all-purpose cleaning wipe]
 Technology:         [spunlace / spunbond / meltblown / needle-punched / composite]
 Target basis weight: [__] gsm  (tolerance ±[__]%)
@@ -127,7 +127,7 @@ Lint requirement:   [Helmke level __ / none visible after 5 wipes]
 Packaging:          [folded, labeled, PE bag of __ pcs]
 Monthly volume:     [__] rolls / [__] pcs
 Target FOB price:   [__] / unit (if you have one)
-```
+</pre>
 
 Send that to a manufacturer who runs **multiple** lines, and you'll get a real quote plus a sample — not a guess. (This is the exact brief Kocean's team works from every day.)
 

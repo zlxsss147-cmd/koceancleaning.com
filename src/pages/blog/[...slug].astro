@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const { Content } = await post.render();
 const { title, description, pubDate, updatedDate, category, tags } = post.data;
 
 const related = (await getCollection('blog', ({ data }) => !data.draft && data.category === category))
@@ -44,7 +45,7 @@ const related = (await getCollection('blog', ({ data }) => !data.draft && data.c
       </header>
 
       <div class="article-body">
-        <slot />
+        <Content />
       </div>
 
       <footer class="article-foot">
@@ -165,6 +166,19 @@ const related = (await getCollection('blog', ({ data }) => !data.draft && data.c
     background: var(--teal-50);
     border-radius: 0 10px 10px 0;
     color: var(--ink-soft);
+  }
+  .article-body pre.spec-sheet {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--teal-500);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin: 24px 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    color: var(--ink-soft);
+    white-space: pre;
   }
   .article-body table {
     width: 100%;
