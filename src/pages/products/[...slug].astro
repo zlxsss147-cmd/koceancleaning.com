@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { PRODUCT_CATEGORIES } from '../../data/site';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products', ({ data }) => !data.draft);
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const { title, description, category, sku, itemNo, material, size, weight, packing, images, features } =
+  product.data;
+
+const catTitle = PRODUCT_CATEGORIES.find((c) => c.slug === category)?.title ?? category;
+
+const related = (await getCollection('products', ({ data }) => !data.draft && data.category === category))
+  .filter((p) => p.slug !== product.slug)
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+  .slice(0, 3);
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="product">
+    <div class="container product-inner">
+      <nav class="crumbs">
+        <a href="/products/">Products</a>
+        <span aria-hidden="true">/</span>
+        <a href={`/products/#${category}`}>{catTitle}</a>
+      </nav>
+
+      <div class="product-grid">
+        <div class="gallery">
+          <div class="gallery-main">
+            {images.map((img, i) => (
+              <img
+                src={img}
+                alt={`${title} — view ${i + 1}`}
+                class:list={['gallery-img', { hidden: i !== 0 }]}
+                data-i={i}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+          </div>
+          {images.length > 1 && (
+            <div class="gallery-thumbs">
+              {images.map((img, i) => (
+                <button
+                  type="button"
+                  class:list={['thumb', { active: i === 0 }]}
+                  data-i={i}
+                  aria-label={`Show image ${i + 1}`}
+                >
+                  <img src={img} alt="" loading="lazy" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div class="product-info">
+          {sku && <span class="sku">SKU {sku}</span>}
+          <h1>{title}</h1>
+          <p class="lead">{description}</p>
+
+          {(itemNo || material || size || weight || packing) && (
+            <table class="specs">
+              <tbody>
+                {itemNo && (<tr><th>Item No.</th><td>{itemNo}</td></tr>)}
+                {material && (<tr><th>Material</th><td>{material}</td></tr>)}
+                {size && (<tr><th>Size</th><td>{size}</td></tr>)}
+                {weight && (<tr><th>Weight</th><td>{weight}</td></tr>)}
+                {packing && (<tr><th>Packing</th><td>{packing}</td></tr>)}
+              </tbody>
+            </table>
+          )}
+
+          {features.length > 0 && (
+            <div class="features">
+              <h2>Key features</h2>
+              <ul>
+                {features.map((f) => (<li>{f}</li>))}
+              </ul>
+            </div>
+          )}
+
+          <a href="/contact/" class="btn btn--primary">Request a Quote →</a>
+        </div>
+      </div>
+
+      <div class="product-body">
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  {related.length > 0 && (
+    <section class="section section--soft">
+      <div class="container">
+        <h2 class="rel-title">More {catTitle}</h2>
+        <div class="rel-grid">
+          {related.map((r) => (
+            <a href={`/products/${r.slug}/`} class="card rel-card">
+              <div class="rel-thumb">
+                <img src={r.data.images[0]} alt={r.data.title} loading="lazy" />
+              </div>
+              <div class="rel-body">
+                <span class="rel-sku">{r.data.sku}</span>
+                <h3>{r.data.title}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<script>
+  const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
+  const imgs = document.querySelectorAll('.gallery-main .gallery-img');
+  thumbs.forEach((t) => {
+    t.addEventListener('click', () => {
+      const i = Number(t.dataset.i);
+      imgs.forEach((im, idx) => im.classList.toggle('hidden', idx !== i));
+      thumbs.forEach((th) => th.classList.toggle('active', th === t));
+    });
+  });
+</script>
+
+<style>
+  .product { padding: 48px 0 64px; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+  .crumbs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+  }
+  .crumbs a { color: var(--ink-muted); }
+  .crumbs a:hover { color: var(--teal-700); }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .gallery-main { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); background: var(--bg-soft); }
+  .gallery-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .gallery-img.hidden { display: none; }
+  .gallery-thumbs { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+  .thumb {
+    width: 76px; height: 76px; padding: 0; border: 2px solid transparent; border-radius: 10px;
+    overflow: hidden; cursor: pointer; background: none;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb.active { border-color: var(--orange-500); }
+
+  .sku {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--orange-500);
+    margin-bottom: 10px;
+  }
+  .product-info h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 14px; }
+  .product-info .lead { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 22px; }
+
+  .specs { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+  .specs th, .specs td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+  .specs th { width: 120px; color: var(--ink-muted); font-weight: 600; background: var(--bg-soft); }
+  .specs td { color: var(--ink); }
+
+  .features { margin-bottom: 28px; }
+  .features h2 { font-size: 1.1rem; margin-bottom: 12px; color: var(--teal-800); }
+  .features ul { list-style: none; display: grid; gap: 10px; }
+  .features li { position: relative; padding-left: 26px; color: var(--ink-soft); font-size: 0.97rem; }
+  .features li::before {
+    content: ''; position: absolute; left: 4px; top: 8px; width: 9px; height: 9px;
+    border-radius: 50%; background: var(--teal-500);
+  }
+
+  .product-body { margin-top: 40px; max-width: 760px; }
+  .product-body h2 { font-size: 1.4rem; margin: 28px 0 12px; }
+  .product-body p { color: var(--ink-soft); line-height: 1.7; margin-bottom: 14px; }
+
+  .rel-title { font-size: 1.3rem; margin-bottom: 22px; }
+  .rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .rel-card { color: var(--ink); display: block; }
+  .rel-card:hover { color: var(--ink); }
+  .rel-thumb { overflow: hidden; aspect-ratio: 4 / 3; border-bottom: 1px solid var(--line); }
+  .rel-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease; }
+  .rel-card:hover .rel-thumb img { transform: scale(1.04); }
+  .rel-body { padding: 16px 18px 20px; }
+  .rel-sku { font-size: 0.74rem; font-weight: 700; color: var(--orange-500); letter-spacing: 0.08em; }
+  .rel-body h3 { font-size: 1rem; margin-top: 6px; }
+
+  @media (max-width: 860px) {
+    .product-grid { grid-template-columns: 1fr; gap: 28px; }
+    .rel-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .rel-grid { grid-template-columns: 1fr; }
+  }
+</style>

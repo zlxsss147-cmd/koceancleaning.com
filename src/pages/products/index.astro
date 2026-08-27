@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { PRODUCT_CATEGORIES } from '../../data/site';
+import { getCollection } from 'astro:content';
 
 const categoryDetails = {
   'microfiber-cleaning': {
@@ -32,6 +33,15 @@ const categoryDetails = {
     items: ['Dusting gloves', 'Cleaning slippers', 'Dusters & duster sets', 'Microfiber cleaning mitts', 'Home care accessories'],
   },
 };
+
+const allProducts = await getCollection('products', ({ data }) => !data.draft);
+const byCat = {};
+for (const p of allProducts) {
+  (byCat[p.data.category] ||= []).push(p);
+}
+for (const k of Object.keys(byCat)) {
+  byCat[k].sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+}
 ---
 
 <BaseLayout title="Products" description="Microfiber cleaning cloths, mops, sponges, car cleaning, nonwovens, wet wipes and home cleaning series — OEM/ODM welcome from Kocean.">
@@ -46,6 +56,7 @@ const categoryDetails = {
   {PRODUCT_CATEGORIES.map((cat, i) => {
     const detail = categoryDetails[cat.slug];
     const isReverse = i % 2 === 1;
+    const prods = byCat[cat.slug] ?? [];
     return (
       <section class:list={['section', 'cat-block', { 'cat-block--reverse': isReverse }]} id={cat.slug}>
         <div class="container cat-inner">
@@ -68,6 +79,24 @@ const categoryDetails = {
             </ul>
           </div>
         </div>
+
+        {prods.length > 0 && (
+          <div class="container">
+            <div class="cat-products">
+              {prods.map((p) => (
+                <a href={`/products/${p.slug}/`} class="card prod-card">
+                  <div class="prod-thumb">
+                    <img src={p.data.images[0]} alt={p.data.title} loading="lazy" />
+                  </div>
+                  <div class="prod-body">
+                    <span class="prod-sku">{p.data.sku}</span>
+                    <h3>{p.data.title}</h3>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
     );
   })}
@@ -179,6 +208,44 @@ const categoryDetails = {
     padding: 8px 0;
   }
 
+  /* Product cards per category */
+  .cat-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .prod-card {
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+  }
+  .prod-card:hover { color: var(--ink); }
+  .prod-thumb {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-soft);
+  }
+  .prod-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+  .prod-card:hover .prod-thumb img { transform: scale(1.05); }
+  .prod-body { padding: 14px 16px 18px; }
+  .prod-sku {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--orange-500);
+    margin-bottom: 4px;
+  }
+  .prod-body h3 { font-size: 0.98rem; line-height: 1.35; }
+
   .cta-box {
     background: linear-gradient(120deg, var(--teal-800), var(--teal-700));
     border-radius: var(--radius);
@@ -198,9 +265,16 @@ const categoryDetails = {
     .cat-block--reverse .cat-right { order: 1; }
   }
 
+  @media (max-width: 980px) {
+    .cat-products { grid-template-columns: repeat(3, 1fr); }
+  }
   @media (max-width: 768px) {
     .cat-inner { grid-template-columns: 1fr; gap: 32px; }
     .cat-block { padding: 42px 0; }
+    .cat-products { grid-template-columns: repeat(2, 1fr); }
     .cta-box { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .cat-products { grid-template-columns: 1fr; }
   }
 </style>
