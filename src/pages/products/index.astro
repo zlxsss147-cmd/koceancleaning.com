@@ -42,6 +42,15 @@ for (const p of allProducts) {
 for (const k of Object.keys(byCat)) {
   byCat[k].sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 }
+
+// Strip leading SKU/model code from product titles on the listing page
+const displayName = (p) => {
+  const { title, sku } = p.data;
+  if (sku && title.toUpperCase().startsWith(sku.toUpperCase())) {
+    return title.slice(sku.length).trim();
+  }
+  return title;
+};
 ---
 
 <BaseLayout title="Products" description="Microfiber cleaning cloths, mops, sponges, car cleaning, nonwovens, wet wipes and home cleaning series — OEM/ODM welcome from Kocean.">
@@ -86,11 +95,10 @@ for (const k of Object.keys(byCat)) {
               {prods.map((p) => (
                 <a href={`/products/${p.slug}/`} class="card prod-card">
                   <div class="prod-thumb">
-                    <img src={p.data.images[0]} alt={p.data.title} loading="lazy" />
+                    <img src={p.data.images[0]} alt={displayName(p)} loading="lazy" />
                   </div>
                   <div class="prod-body">
-                    <span class="prod-sku">{p.data.sku}</span>
-                    <h3>{p.data.title}</h3>
+                    <h3>{displayName(p)}</h3>
                   </div>
                 </a>
               ))}
@@ -236,14 +244,6 @@ for (const k of Object.keys(byCat)) {
   }
   .prod-card:hover .prod-thumb img { transform: scale(1.05); }
   .prod-body { padding: 14px 16px 18px; }
-  .prod-sku {
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--orange-500);
-    margin-bottom: 4px;
-  }
   .prod-body h3 { font-size: 0.98rem; line-height: 1.35; }
 
   .cta-box {
