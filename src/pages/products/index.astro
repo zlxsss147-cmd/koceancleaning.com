@@ -47,7 +47,7 @@ for (const k of Object.keys(byCat)) {
 const displayName = (p) => {
   const { title, sku } = p.data;
   if (sku && title.toUpperCase().startsWith(sku.toUpperCase())) {
-    return title.slice(sku.length).trim();
+    return title.slice(sku.length).replace(/^[\s\-_:./]+/, '');
   }
   return title;
 };

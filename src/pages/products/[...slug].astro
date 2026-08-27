@@ -16,7 +16,9 @@ const { title, description, category, sku, material, size, weight, packing, imag
   product.data;
 
 // Strip leading SKU/model code from titles (shown clean on the page)
-const cleanTitle = sku && title.toUpperCase().startsWith(sku.toUpperCase()) ? title.slice(sku.length).trim() : title;
+const cleanTitle = sku && title.toUpperCase().startsWith(sku.toUpperCase())
+  ? title.slice(sku.length).replace(/^[\s\-_:./]+/, '')
+  : title;
 
 const catTitle = PRODUCT_CATEGORIES.find((c) => c.slug === category)?.title ?? category;
 
@@ -109,7 +111,7 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
         <div class="rel-grid">
           {related.map((r) => {
             const relTitle = r.data.sku && r.data.title.toUpperCase().startsWith(r.data.sku.toUpperCase())
-              ? r.data.title.slice(r.data.sku.length).trim()
+              ? r.data.title.slice(r.data.sku.length).replace(/^[\s\-_:./]+/, '')
               : r.data.title;
             return (
               <a href={`/products/${r.slug}/`} class="card rel-card">
