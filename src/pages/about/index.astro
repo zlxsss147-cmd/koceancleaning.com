@@ -8,6 +8,20 @@ const timeline = [
   { year: '2020', text: 'Joined the Zhejiang E-Sun group, strengthening factory backing and export capability.' },
   { year: 'Today', text: 'Exporting to 65+ countries with a 25-person team and a partner mill in Fujian, China.' },
 ];
+
+const factory = [
+  { src: '/images/about/weaving.jpg', alt: 'Fiber weaving' },
+  { src: '/images/about/slitting-machine.jpg', alt: 'Automated slitting' },
+  { src: '/images/about/slitting.jpg', alt: 'Material slitting' },
+  { src: '/images/about/edge-binding.jpg', alt: 'Automatic edge binding' },
+  { src: '/images/about/edge-binding-machine.jpg', alt: 'Edge-binding machine' },
+  { src: '/images/about/edge-binding-2.jpg', alt: 'Automatic edge binding' },
+  { src: '/images/about/sewing-machine.jpg', alt: 'Sewing station' },
+  { src: '/images/about/sewing-production.jpg', alt: 'Sewing production line' },
+  { src: '/images/about/perforated-roll.jpg', alt: 'Perforated roll production' },
+  { src: '/images/about/packaging-qc.jpg', alt: 'Packing & quality inspection' },
+  { src: '/images/about/warehouse.png', alt: 'Finished-goods warehouse' },
+];
 ---
 
 <BaseLayout title="About Us" description="Kocean (Yiwu Kocean Import & Export Co., Ltd) — manufacturer and trading company of microfiber cleaning products and nonwovens, exporting to 65+ countries since 2009.">
@@ -49,6 +63,32 @@ const timeline = [
           <li><strong>Model</strong> Manufacturer + trading</li>
           <li><strong>Partner mill</strong> Fujian, China</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTORY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Our factory</p>
+        <h2>One roof, from raw fiber to finished goods</h2>
+      </div>
+      <p class="factory-lead">
+        Our manufacturing runs end to end under one roof — from fiber weaving and automated
+        slitting, through edge-binding and sewing, to packing and quality inspection. In-house
+        half-automatic machines keep output consistent and costs competitive, while our warehouse
+        and QC team make sure every shipment meets spec.
+      </p>
+      <div class="factory-grid">
+        {factory.map((img) => (
+          <figure class="factory-item">
+            <a href={img.src} target="_blank" rel="noopener" aria-label={img.alt}>
+              <img src={img.src} alt={img.alt} loading="lazy" />
+            </a>
+            <figcaption>{img.alt}</figcaption>
+          </figure>
+        ))}
       </div>
     </div>
   </section>
@@ -138,6 +178,50 @@ const timeline = [
   .about-card li:last-child { border-bottom: none; }
   .about-card li strong { color: var(--teal-800); font-weight: 600; }
 
+  .factory-lead {
+    max-width: 760px;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0 auto 36px;
+    text-align: center;
+  }
+  .factory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .factory-item {
+    margin: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .factory-item:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+  .factory-item a {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+  .factory-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .factory-item:hover img { transform: scale(1.06); }
+  .factory-item figcaption {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+  }
+
   .timeline {
     max-width: 640px;
     margin: 0 auto;
@@ -193,8 +277,12 @@ const timeline = [
   .cta-box h2 { color: #fff; font-size: 1.6rem; margin-bottom: 8px; }
   .cta-box p { color: #c4d8d5; }
 
+  @media (max-width: 900px) {
+    .factory-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 768px) {
     .about-grid { grid-template-columns: 1fr; }
+    .factory-grid { grid-template-columns: 1fr; }
     .cta-box { flex-direction: column; text-align: center; }
   }
 </style>
