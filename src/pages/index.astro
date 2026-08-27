@@ -73,6 +73,19 @@ const pillars = [
     </div>
   </section>
 
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <div class="container">
+      <img
+        src="/images/hero-banner.png"
+        alt="Kocean microfiber cleaning cloths, mops, sponges and nonwoven fabric"
+        width="1536"
+        height="1024"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
   <!-- STATS -->
   <section class="stats">
     <div class="container stats-grid">
@@ -242,6 +255,21 @@ const pillars = [
   .hero-trust {
     color: var(--ink-muted);
     font-size: 0.9rem;
+  }
+  .hero-banner {
+    padding: 0 0 4px;
+  }
+  .hero-banner .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero-banner img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
   }
   .hero-visual {
     display: grid;
