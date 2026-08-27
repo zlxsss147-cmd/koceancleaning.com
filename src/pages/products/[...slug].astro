@@ -12,10 +12,17 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
-const { title, description, category, sku, itemNo, material, size, weight, packing, images, features } =
+const { title, description, category, sku, material, size, weight, packing, images, features } =
   product.data;
 
+// Strip leading SKU/model code from titles (shown clean on the page)
+const cleanTitle = sku && title.toUpperCase().startsWith(sku.toUpperCase()) ? title.slice(sku.length).trim() : title;
+
 const catTitle = PRODUCT_CATEGORIES.find((c) => c.slug === category)?.title ?? category;
+
+const { Content } = await product.render();
+// Some product markdown bodies carry their own "Key features" section — avoid duplication
+const bodyHasFeatures = !!product.body?.includes('## Key features');
 
 const related = (await getCollection('products', ({ data }) => !data.draft && data.category === category))
   .filter((p) => p.slug !== product.slug)
@@ -23,7 +30,7 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
   .slice(0, 3);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={cleanTitle} description={description}>
   <article class="product">
     <div class="container product-inner">
       <nav class="crumbs">
@@ -38,7 +45,7 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
             {images.map((img, i) => (
               <img
                 src={img}
-                alt={`${title} — view ${i + 1}`}
+                alt={`${cleanTitle} — view ${i + 1}`}
                 class:list={['gallery-img', { hidden: i !== 0 }]}
                 data-i={i}
                 loading={i === 0 ? 'eager' : 'lazy'}
@@ -62,14 +69,12 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
         </div>
 
         <div class="product-info">
-          {sku && <span class="sku">SKU {sku}</span>}
-          <h1>{title}</h1>
+          <h1>{cleanTitle}</h1>
           <p class="lead">{description}</p>
 
-          {(itemNo || material || size || weight || packing) && (
+          {(material || size || weight || packing) && (
             <table class="specs">
               <tbody>
-                {itemNo && (<tr><th>Item No.</th><td>{itemNo}</td></tr>)}
                 {material && (<tr><th>Material</th><td>{material}</td></tr>)}
                 {size && (<tr><th>Size</th><td>{size}</td></tr>)}
                 {weight && (<tr><th>Weight</th><td>{weight}</td></tr>)}
@@ -78,7 +83,7 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
             </table>
           )}
 
-          {features.length > 0 && (
+          {features.length > 0 && !bodyHasFeatures && (
             <div class="features">
               <h2>Key features</h2>
               <ul>
@@ -92,7 +97,7 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
       </div>
 
       <div class="product-body">
-        <slot />
+        <Content />
       </div>
     </div>
   </article>
@@ -102,17 +107,21 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
       <div class="container">
         <h2 class="rel-title">More {catTitle}</h2>
         <div class="rel-grid">
-          {related.map((r) => (
-            <a href={`/products/${r.slug}/`} class="card rel-card">
-              <div class="rel-thumb">
-                <img src={r.data.images[0]} alt={r.data.title} loading="lazy" />
-              </div>
-              <div class="rel-body">
-                <span class="rel-sku">{r.data.sku}</span>
-                <h3>{r.data.title}</h3>
-              </div>
-            </a>
-          ))}
+          {related.map((r) => {
+            const relTitle = r.data.sku && r.data.title.toUpperCase().startsWith(r.data.sku.toUpperCase())
+              ? r.data.title.slice(r.data.sku.length).trim()
+              : r.data.title;
+            return (
+              <a href={`/products/${r.slug}/`} class="card rel-card">
+                <div class="rel-thumb">
+                  <img src={r.data.images[0]} alt={relTitle} loading="lazy" />
+                </div>
+                <div class="rel-body">
+                  <h3>{relTitle}</h3>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -163,14 +172,6 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
   .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .thumb.active { border-color: var(--orange-500); }
 
-  .sku {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--orange-500);
-    margin-bottom: 10px;
-  }
   .product-info h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 14px; }
   .product-info .lead { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 22px; }
 
@@ -200,8 +201,7 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
   .rel-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease; }
   .rel-card:hover .rel-thumb img { transform: scale(1.04); }
   .rel-body { padding: 16px 18px 20px; }
-  .rel-sku { font-size: 0.74rem; font-weight: 700; color: var(--orange-500); letter-spacing: 0.08em; }
-  .rel-body h3 { font-size: 1rem; margin-top: 6px; }
+  .rel-body h3 { font-size: 1rem; }
 
   @media (max-width: 860px) {
     .product-grid { grid-template-columns: 1fr; gap: 28px; }
