@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { PRODUCT_CATEGORIES } from '../../data/site';
 import { getCollection } from 'astro:content';
+import { cleanProductTitle, productSlug } from '../../utils/products';
 
 const categoryDetails = {
   'microfiber-cleaning': {
@@ -42,15 +43,6 @@ for (const p of allProducts) {
 for (const k of Object.keys(byCat)) {
   byCat[k].sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 }
-
-// Strip leading SKU/model code from product titles on the listing page
-const displayName = (p) => {
-  const { title, sku } = p.data;
-  if (sku && title.toUpperCase().startsWith(sku.toUpperCase())) {
-    return title.slice(sku.length).replace(/^[\s\-_:./]+/, '');
-  }
-  return title;
-};
 ---
 
 <BaseLayout title="Products" description="Microfiber cleaning cloths, mops, sponges, car cleaning, nonwovens, wet wipes and home cleaning series — OEM/ODM welcome from Kocean.">
@@ -93,12 +85,12 @@ const displayName = (p) => {
           <div class="container">
             <div class="cat-products">
               {prods.map((p) => (
-                <a href={`/products/${p.slug}/`} class="card prod-card">
+                <a href={`/products/${productSlug(p.data)}/`} class="card prod-card">
                   <div class="prod-thumb">
-                    <img src={p.data.images[0]} alt={displayName(p)} loading="lazy" />
+                    <img src={p.data.images[0]} alt={cleanProductTitle(p.data)} loading="lazy" />
                   </div>
                   <div class="prod-body">
-                    <h3>{displayName(p)}</h3>
+                    <h3>{cleanProductTitle(p.data)}</h3>
                   </div>
                 </a>
               ))}

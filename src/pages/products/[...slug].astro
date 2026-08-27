@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { PRODUCT_CATEGORIES } from '../../data/site';
+import { cleanProductTitle, productSlug } from '../../utils/products';
 
 export async function getStaticPaths() {
   const products = await getCollection('products', ({ data }) => !data.draft);
   return products.map((product) => ({
-    params: { slug: product.slug },
+    params: { slug: productSlug(product.data) },
     props: { product },
   }));
 }
@@ -16,9 +17,7 @@ const { title, description, category, sku, material, size, weight, packing, imag
   product.data;
 
 // Strip leading SKU/model code from titles (shown clean on the page)
-const cleanTitle = sku && title.toUpperCase().startsWith(sku.toUpperCase())
-  ? title.slice(sku.length).replace(/^[\s\-_:./]+/, '')
-  : title;
+const cleanTitle = cleanProductTitle(product.data);
 
 const catTitle = PRODUCT_CATEGORIES.find((c) => c.slug === category)?.title ?? category;
 
@@ -110,11 +109,9 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
         <h2 class="rel-title">More {catTitle}</h2>
         <div class="rel-grid">
           {related.map((r) => {
-            const relTitle = r.data.sku && r.data.title.toUpperCase().startsWith(r.data.sku.toUpperCase())
-              ? r.data.title.slice(r.data.sku.length).replace(/^[\s\-_:./]+/, '')
-              : r.data.title;
+            const relTitle = cleanProductTitle(r.data);
             return (
-              <a href={`/products/${r.slug}/`} class="card rel-card">
+              <a href={`/products/${productSlug(r.data)}/`} class="card rel-card">
                 <div class="rel-thumb">
                   <img src={r.data.images[0]} alt={relTitle} loading="lazy" />
                 </div>
