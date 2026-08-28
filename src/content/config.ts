@@ -41,6 +41,16 @@ const products = defineCollection({
     size: z.string().optional(),
     weight: z.string().optional(),
     packing: z.string().optional(),
+    // Optional custom spec rows. When present, they replace the default
+    // Material/Size/Weight/Packing table on the product detail page.
+    specs: z
+      .array(
+        z.object({
+          label: z.string(),
+          value: z.string(),
+        })
+      )
+      .optional(),
     images: z.array(z.string()).default([]),
     features: z.array(z.string()).default([]),
     draft: z.boolean().default(false),

@@ -13,8 +13,19 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
-const { title, description, category, sku, material, size, weight, packing, images, features } =
+const { title, description, category, sku, material, size, weight, packing, specs, images, features } =
   product.data;
+
+// Custom spec rows (if defined) take precedence over the default attribute table
+const specRows =
+  specs && specs.length > 0
+    ? specs
+    : [
+        ...(material ? [{ label: 'Material', value: material }] : []),
+        ...(size ? [{ label: 'Size', value: size }] : []),
+        ...(weight ? [{ label: 'Weight', value: weight }] : []),
+        ...(packing ? [{ label: 'Packing', value: packing }] : []),
+      ];
 
 // Strip leading SKU/model code from titles (shown clean on the page)
 const cleanTitle = cleanProductTitle(product.data);
@@ -73,13 +84,12 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
           <h1>{cleanTitle}</h1>
           <p class="lead">{description}</p>
 
-          {(material || size || weight || packing) && (
+          {specRows.length > 0 && (
             <table class="specs">
               <tbody>
-                {material && (<tr><th>Material</th><td>{material}</td></tr>)}
-                {size && (<tr><th>Size</th><td>{size}</td></tr>)}
-                {weight && (<tr><th>Weight</th><td>{weight}</td></tr>)}
-                {packing && (<tr><th>Packing</th><td>{packing}</td></tr>)}
+                {specRows.map((row) => (
+                  <tr><th>{row.label}</th><td>{row.value}</td></tr>
+                ))}
               </tbody>
             </table>
           )}
