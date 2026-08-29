@@ -82,7 +82,7 @@ const related = (await getCollection('products', ({ data }) => !data.draft && da
 
         <div class="product-info">
           <h1>{cleanTitle}</h1>
-          <p class="lead">{description}</p>
+          {description && <p class="lead">{description}</p>}
 
           {specRows.length > 0 && (
             <table class="specs">
