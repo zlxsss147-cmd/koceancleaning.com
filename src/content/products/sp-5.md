@@ -1,12 +1,26 @@
 ---
 title: "Swedish Dishcloth Cellulose Sponge Cloths"
-description: "Swedish Dishcloth Cellulose Sponge Cloths are an innovative and eco-friendly alternative to traditional sponges and paper towels"
+description: "The Swedish Cellulose Sponge Cleaning Cloth is made from 70% wood pulp cellulose and 30% cotton, combining the absorbency of a sponge with the flexibility of a cleaning cloth. Lightweight, reusable, biodegradable, and easy to clean, it is ideal for kitchens, countertops, dishes, tables, and everyday household cleaning."
 category: sponges
 sku: "sp-5"
-material: "70% Wood Pulp + 30% Cotton"
-size: "Dry:19.5*17.2*0.2cm  Wet:18*20cm"
-weight: "9g"
-packing: "10pcs/opp bag 1000pcs/per box"
+itemNo: "EHH012"
+specs:
+  - label: "Item no"
+    value: "EHH012"
+  - label: "Material"
+    value: "70% Wood Pulp Cellulose + 30% Cotton"
+  - label: "Size"
+    value: "19.5 × 17 × 0.2 cm"
+  - label: "Weight"
+    value: "8.3–9.2 g/pc"
+  - label: "Colors"
+    value: "9 Colors Available"
+  - label: "Color Options"
+    value: "Blue, Yellow, Pink, Green & More"
+  - label: "Key Properties"
+    value: "Absorbent, Reusable, Easy to Clean"
+  - label: "Packing"
+    value: "10pcs/opp bag 1000pcs/per box"
 images:
   - /images/products/sponges/sp-5/01.jpg
   - /images/products/sponges/sp-5/02.jpg
@@ -18,27 +32,25 @@ images:
   - /images/products/sponges/sp-5/08.jpg
   - /images/products/sponges/sp-5/09.png
   - /images/products/sponges/sp-5/10.png
-features:
-  - "Eco-Friendly & Sustainable: Made from biodegradable materials, these cloths are an excellent replacement for disposable paper towels and synthetic sponges, reducing waste and helping the environment."
-  - "Highly Absorbent: Each cloth can hold up to 20 times its weight in liquid, making it incredibly effective for cleaning spills, wiping surfaces, and washing dishes."
-  - "Quick-Drying: The porous design allows the cloth to dry rapidly, preventing odors and bacterial growth, ensuring a hygienic cleaning experience."
-  - "Reusable & Durable: Unlike single-use paper towels, these cloths can be washed and reused up to 200 times, making them a cost-effective and long-lasting cleaning solution."
-  - "Versatile Use: Suitable for a variety of cleaning tasks, including kitchen surfaces, dishes, windows, bathrooms, and more. One cloth replaces multiple cleaning tools."
-  - "Lightweight & Compact: Easy to store and carry, these cloths are perfect for both home use and on-the-go cleaning."
-  - "Aesthetic Design: Available in a range of stylish patterns and colors, these cloths add a touch of elegance to your kitchen while being functional."
 draft: false
 order: 5
 ---
 
-Swedish Dishcloth Cellulose Sponge Cloths are an innovative and eco-friendly alternative to traditional sponges and paper towels. Made from a blend of natural cellulose and cotton, these highly absorbent and reusable cloths are designed to make your cleaning tasks more efficient and sustainable. Whether you're wiping countertops, doing dishes, or cleaning windows, these versatile cloths are perfect for a wide range of household chores. With their quick-drying properties and durable design, Swedish Dishcloths are a must-have for any eco-conscious home.
+## Product Description
 
-## Key features
+The Swedish Cellulose Sponge Cloth is a reusable cleaning cloth made from a blend of 70% wood pulp cellulose and 30% cotton. Its porous structure provides excellent absorption of water, spills, grease, and everyday kitchen messes while remaining soft and flexible when wet.
 
-- Eco-Friendly & Sustainable: Made from biodegradable materials, these cloths are an excellent replacement for disposable paper towels and synthetic sponges, reducing waste and helping the environment.
-- Highly Absorbent: Each cloth can hold up to 20 times its weight in liquid, making it incredibly effective for cleaning spills, wiping surfaces, and washing dishes.
-- Quick-Drying: The porous design allows the cloth to dry rapidly, preventing odors and bacterial growth, ensuring a hygienic cleaning experience.
-- Reusable & Durable: Unlike single-use paper towels, these cloths can be washed and reused up to 200 times, making them a cost-effective and long-lasting cleaning solution.
-- Versatile Use: Suitable for a variety of cleaning tasks, including kitchen surfaces, dishes, windows, bathrooms, and more. One cloth replaces multiple cleaning tools.
-- Lightweight & Compact: Easy to store and carry, these cloths are perfect for both home use and on-the-go cleaning.
-- Aesthetic Design: Available in a range of stylish patterns and colors, these cloths add a touch of elegance to your kitchen while being functional.
+Measuring 19.5 × 17 cm and weighing approximately 8.3–9.2 g per piece, the cloth is lightweight and convenient for daily wiping, washing, and cleaning tasks. After use, it can be rinsed and cleaned easily for repeated use.
 
+The cellulose and cotton construction provides a practical alternative to conventional disposable wipes for everyday cleaning. With 9 available colors, as well as custom printing and packaging options, the product is suitable for household cleaning brands, retailers, distributors, and private-label programs.
+
+## Product Features
+
+- **70% Cellulose + 30% Cotton** – Combines wood pulp cellulose with cotton for absorbency, softness, and flexibility.
+- **High Absorbency** – Quickly absorbs water, spills, grease, and other liquids during cleaning.
+- **Reusable & Easy to Clean** – Can be rinsed and reused for routine household cleaning.
+- **Biodegradable Material** – Cellulose and cotton-based construction provides a more environmentally conscious option for everyday cleaning.
+- **Soft & Flexible When Wet** – Easy to squeeze, wipe, and handle across different cleaning surfaces.
+- **Multi-Purpose Cleaning** – Suitable for countertops, sinks, tables, dishes, kitchens, bathrooms, and general surface wiping.
+- **9 Color Options** – Multiple colors are available for different product collections and cleaning applications.
+- **OEM & Private Label Available** – Size, color, shape, pattern printing, logo, retail packaging, and multipack configurations can be customized.
