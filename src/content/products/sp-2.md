@@ -1,10 +1,26 @@
 ---
 title: "Cellulose Scrub Kitchen Sponge"
-description: "Esun is excited to introduce our Natural Wood Pulp Sponge, a premium cleaning tool designed for eco-conscious households"
+description: "The Yellow Cellulose Cleaning Sponge is made from wood pulp fiber with a naturally porous and highly absorbent structure. Soft and flexible when wet, it quickly absorbs water and liquids, making it suitable for kitchen cleaning, dishwashing, countertop wiping, household cleaning, and other general-purpose applications."
 category: sponges
 sku: "sp-2"
-material: "Wooden Pulp Cellulose"
-size: "11*7*2cm"
+itemNo: "EHH002"
+specs:
+  - label: "Item no"
+    value: "EHH002"
+  - label: "Material"
+    value: "Wood Pulp Fiber / Cellulose"
+  - label: "Size"
+    value: "11 × 7 × 2 cm/pc"
+  - label: "Color"
+    value: "Yellow / Custom Colors"
+  - label: "Structure"
+    value: "Porous Cellulose Sponge"
+  - label: "Feature"
+    value: "Absorbent, Soft & Flexible"
+  - label: "Application"
+    value: "Kitchen & General Cleaning"
+  - label: "Shape"
+    value: "Rectangle / Customizable"
 images:
   - /images/products/sponges/sp-2/01.jpg
   - /images/products/sponges/sp-2/02.jpg
@@ -14,23 +30,25 @@ images:
   - /images/products/sponges/sp-2/06.jpg
   - /images/products/sponges/sp-2/07.jpg
   - /images/products/sponges/sp-2/08.jpg
-features:
-  - "Eco-Friendly Material:Made from natural wood pulp, this sponge is fully biodegradable and compostable, making it an environmentally responsible choice."
-  - "Superior Absorbency:The sponge's natural fibers provide excellent water retention, allowing it to clean up messes quickly and efficiently."
-  - "Soft & Non-Scratch:Gentle on all surfaces, the sponge ensures a scratch-free clean, making it safe for delicate dishes, glassware, and non-stick cookware."
-  - "Durable & Reusable:Designed for long-lasting use, the sponge maintains its shape and effectiveness even after repeated use, offering great value for money."
-  - "Quick-Drying Design:The porous structure allows the sponge to dry quickly, preventing bacterial growth and keeping it fresh and hygienic."
 draft: false
 order: 2
 ---
 
-Esun is excited to introduce our Natural Wood Pulp Sponge, a premium cleaning tool designed for eco-conscious households. Made from 100% natural wood pulp, this sponge is soft, highly absorbent, and biodegradable, offering a sustainable and effective solution for all your cleaning needs. Whether you're washing dishes, wiping countertops, or cleaning delicate surfaces, Esun's Natural Wood Pulp Sponge delivers exceptional performance while being gentle on the environment.
+## Product Description
 
-## Key features
+The Cellulose Cleaning Sponge is made from wood pulp fiber and features an open, porous structure that provides excellent water and liquid absorption.
 
-- Eco-Friendly Material:Made from natural wood pulp, this sponge is fully biodegradable and compostable, making it an environmentally responsible choice.
-- Superior Absorbency:The sponge's natural fibers provide excellent water retention, allowing it to clean up messes quickly and efficiently.
-- Soft & Non-Scratch:Gentle on all surfaces, the sponge ensures a scratch-free clean, making it safe for delicate dishes, glassware, and non-stick cookware.
-- Durable & Reusable:Designed for long-lasting use, the sponge maintains its shape and effectiveness even after repeated use, offering great value for money.
-- Quick-Drying Design:The porous structure allows the sponge to dry quickly, preventing bacterial growth and keeping it fresh and hygienic.
+Measuring 11 × 7 × 2 cm per piece, the sponge offers a comfortable size for everyday hand cleaning tasks. When wet, the cellulose material becomes soft and flexible, helping wipe away water, spills, food residue, and everyday dirt from common surfaces.
 
+It is suitable for dishwashing, kitchen cleaning, countertops, sinks, bathrooms, household surfaces, and general-purpose wiping. Size, color, shape, logo, and packaging can also be customized for wholesale, retail, and private-label requirements.
+
+## Product Features
+
+- **Wood Pulp Fiber Material** – Made from cellulose-based wood pulp fiber with a porous sponge structure.
+- **High Water Absorbency** – Quickly absorbs water, spills, and other liquids during cleaning.
+- **Porous Structure** – Open-cell construction provides good liquid retention and wiping performance.
+- **Soft & Flexible When Wet** – Easy to squeeze, rinse, and handle during everyday cleaning.
+- **Convenient Size** – 11 × 7 × 2 cm design is suitable for a wide range of hand-cleaning tasks.
+- **Multi-Purpose Use** – Suitable for dishes, sinks, countertops, kitchens, bathrooms, and general household cleaning.
+- **Reusable** – Can be rinsed and reused for routine cleaning applications.
+- **OEM Customization** – Size, thickness, shape, color, logo, and packaging can be customized.
