@@ -1,10 +1,26 @@
 ---
 title: "Biodegradable Multicolor Compressed Cellulose Sponge"
-description: "Esun introduces the Compressed Wood Pulp Sponge, a revolutionary cleaning tool designed to make your kitchen chores easier, eco-friendly, and efficient"
+description: "The Colorful Compressed Cellulose Sponge is made from wood pulp fiber and compressed into a thin, lightweight form for convenient storage, packaging, and transportation. Once soaked in water, the sponge quickly expands into a soft and absorbent cleaning sponge suitable for household, kitchen, and general surface cleaning."
 category: sponges
 sku: "sp-1"
-material: "Wood Pulp"
-packing: "5pcs/opp bag 1000pcs/box"
+itemNo: "EHH001"
+specs:
+  - label: "Item no"
+    value: "EHH001"
+  - label: "Material"
+    value: "Wood Pulp Fiber / Cellulose"
+  - label: "Compressed Size"
+    value: "6.2 × 9.8 × 0.2 cm"
+  - label: "Expanded Size (Wet)"
+    value: "7.7 × 11.4 × 1.5 cm"
+  - label: "Form"
+    value: "Dry Compressed Sponge"
+  - label: "Activation"
+    value: "Expands After Soaking in Water"
+  - label: "Color"
+    value: "Multiple Colors / Custom"
+  - label: "Shape"
+    value: "Customizable"
 images:
   - /images/products/sponges/sp-1/01.jpg
   - /images/products/sponges/sp-1/02.jpg
@@ -14,27 +30,27 @@ images:
   - /images/products/sponges/sp-1/06.jpg
   - /images/products/sponges/sp-1/07.jpg
   - /images/products/sponges/sp-1/08.jpg
-features:
-  - "Magic Expansion:Compressed for easy storage, the sponge expands significantly when exposed to water, transforming into a soft and highly effective cleaning tool."
-  - "Eco-Friendly Material:Made from 100% natural wood pulp, this sponge is biodegradable and environmentally sustainable, making it a perfect choice for eco-conscious households."
-  - "Superior Absorbency:The sponge boasts excellent water retention, allowing it to clean up messes quickly and efficiently, time and time again."
-  - "Non-Scratch Design:Gentle on all surfaces, the sponge ensures a scratch-free clean, making it safe for delicate dishes, glassware, and non-stick cookware."
-  - "Durable and Reusable:Designed for long-lasting use, the sponge maintains its shape and effectiveness even after repeated use, providing exceptional value for money."
-  - "Multi-Purpose Use:Ideal for a variety of cleaning tasks, including dishwashing, countertop cleaning, and even bathroom surfaces."
-  - "Easy to Use:Simply absorb water to activate the sponge, and it becomes soft and ready for use. After cleaning, rinse and let it dry for reuse."
 draft: false
 order: 1
 ---
 
-Esun introduces the Compressed Wood Pulp Sponge, a revolutionary cleaning tool designed to make your kitchen chores easier, eco-friendly, and efficient. Crafted from natural wood pulp, this multi-purpose sponge is highly absorbent, durable, and biodegradable, offering a sustainable alternative to traditional cleaning sponges. Whether you're washing dishes, wiping countertops, or tackling tough messes, Esun's Compressed Wood Pulp Sponge is your go-to solution for a spotless home.
+## Product Description
 
-## Key features
+The Compressed Cellulose Sponge is manufactured from wood pulp fiber and supplied in a compact, dry-compressed form. With a thickness of only 0.2 cm before use, it helps reduce storage and packaging volume.
 
-- Magic Expansion:Compressed for easy storage, the sponge expands significantly when exposed to water, transforming into a soft and highly effective cleaning tool.
-- Eco-Friendly Material:Made from 100% natural wood pulp, this sponge is biodegradable and environmentally sustainable, making it a perfect choice for eco-conscious households.
-- Superior Absorbency:The sponge boasts excellent water retention, allowing it to clean up messes quickly and efficiently, time and time again.
-- Non-Scratch Design:Gentle on all surfaces, the sponge ensures a scratch-free clean, making it safe for delicate dishes, glassware, and non-stick cookware.
-- Durable and Reusable:Designed for long-lasting use, the sponge maintains its shape and effectiveness even after repeated use, providing exceptional value for money.
-- Multi-Purpose Use:Ideal for a variety of cleaning tasks, including dishwashing, countertop cleaning, and even bathroom surfaces.
-- Easy to Use:Simply absorb water to activate the sponge, and it becomes soft and ready for use. After cleaning, rinse and let it dry for reuse.
+When placed in water, the compressed sponge absorbs moisture and expands to approximately 7.7 × 11.4 × 1.5 cm, transforming into a soft and absorbent sponge ready for cleaning.
 
+Its cellulose fiber structure provides good water absorption and wiping performance, making it suitable for kitchen cleaning, dishwashing, countertop wiping, household cleaning, and other general-purpose applications.
+
+Different colors, shapes, dimensions, printing, and packaging options can be customized for retailers, distributors, promotional products, and private-label projects.
+
+## Product Features
+
+- **Water-Activated Expansion** – Expands from a thin compressed sheet into a full-size sponge after soaking in water.
+- **Wood Pulp Fiber Material** – Made from cellulose-based wood pulp fiber with a soft and absorbent structure.
+- **High Water Absorbency** – Quickly absorbs water and moisture for everyday wiping and cleaning.
+- **Space-Saving Design** – Only 0.2 cm thick when compressed, helping reduce storage and packaging volume.
+- **Soft & Flexible When Wet** – Becomes soft and easy to handle after absorbing water.
+- **Multiple Color Options** – Available in different colors for retail sets and product differentiation.
+- **Multi-Purpose Cleaning** – Suitable for kitchens, dishes, countertops, bathrooms, and general household cleaning.
+- **OEM Customization** – Size, shape, color, printing, logo, and packaging can be customized for different market requirements.
