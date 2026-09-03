@@ -1,12 +1,24 @@
 ---
 title: "Printed Swedish Cellulose Sponge Cloths"
-description: "Esun Swedish Dishcloth Cellulose Sponge Cloths – the ultimate eco-friendly cleaning solution for your home! Made from a premium blend of 30% cotton and 70% cell"
+description: "The Printed Swedish Dishcloth Cellulose Sponge Cloth is made from 70% wood pulp cellulose and 30% cotton, combining high absorbency with a soft and flexible wiping surface. Featuring customizable printed designs, it is a reusable and biodegradable alternative for kitchen wiping, dishwashing, spill cleanup, and everyday household cleaning."
 category: sponges
 sku: "sp-6"
-material: "70% Wood Pulp + 30% Cotton"
-size: "Dry:19.5*17.2*2cm  Wet:18*20cm"
-weight: "9g"
-packing: "10pcs/opp bag 1000pcs/per box"
+itemNo: "EHH021"
+specs:
+  - label: "Item no"
+    value: "EHH021"
+  - label: "Material"
+    value: "70% Wood Pulp Cellulose + 30% Cotton"
+  - label: "Dry Size"
+    value: "19.5 × 17.2 cm"
+  - label: "Wet Size"
+    value: "Approx. 18 × 20 cm"
+  - label: "Weight"
+    value: "Approx. 9 g/pc"
+  - label: "Printing"
+    value: "Custom Pattern / Digital Printing"
+  - label: "Color"
+    value: "Multiple Colors / Custom"
 images:
   - /images/products/sponges/sp-6/01.jpg
   - /images/products/sponges/sp-6/02.jpg
@@ -14,27 +26,27 @@ images:
   - /images/products/sponges/sp-6/04.jpg
   - /images/products/sponges/sp-6/05.jpg
   - /images/products/sponges/sp-6/06.jpg
-features:
-  - "Premium Material: Made from a blend of 30% cotton and 70% cellulose fiber (wood pulp), eSun Dishcloths are natural, durable, and gentle on all surfaces."
-  - "Eco-Friendly & Sustainable: Biodegradable and compostable, these cloths significantly reduce the need for paper towels and disposable sponges, helping you minimize waste and protect the environment."
-  - "Highly Versatile: Use wet or dry for a wide range of cleaning tasks, including wiping spills, washing dishes, cleaning countertops, stove tops, tabletops, bathroom counters, sinks, shower doors, mirrors, and windows."
-  - "Super Absorbent: Capable of holding up to 20 times their weight in liquid, these cloths are perfect for quick and efficient cleaning."
-  - "Reusable & Long-Lasting: Designed for daily use, eSun Dishcloths can be machine washed, disinfected in the dishwasher, or microwaved, ensuring they stay fresh and hygienic for repeated use."
-  - "Quick-Drying: The porous structure allows the cloths to dry rapidly, preventing odors and bacterial growth."
-  - "Stylish Design: Featuring beautiful colored digital patterns, these cloths add a touch of elegance to your kitchen while being highly functional."
 draft: false
 order: 6
 ---
 
-Esun Swedish Dishcloth Cellulose Sponge Cloths – the ultimate eco-friendly cleaning solution for your home! Made from a premium blend of 30% cotton and 70% cellulose fiber (wood pulp), these natural, reusable sponges are a sustainable alternative to traditional washcloths, wipes, and paper kitchen towels. With their vibrant digital designs, eSun Dishcloths not only perform exceptionally but also add a pop of color to your kitchen and home. Whether you're tackling spills, washing dishes, or cleaning surfaces, these versatile cloths are designed to make your cleaning routine easier, greener, and more stylish.
+## Product Description
 
-## Key features
+The Printed Swedish Dishcloth is a versatile cleaning cloth made from 70% wood pulp cellulose and 30% cotton. Its porous cellulose structure provides excellent liquid absorption, while the cotton content adds flexibility and durability for everyday wiping and cleaning.
 
-- Premium Material: Made from a blend of 30% cotton and 70% cellulose fiber (wood pulp), eSun Dishcloths are natural, durable, and gentle on all surfaces.
-- Eco-Friendly & Sustainable: Biodegradable and compostable, these cloths significantly reduce the need for paper towels and disposable sponges, helping you minimize waste and protect the environment.
-- Highly Versatile: Use wet or dry for a wide range of cleaning tasks, including wiping spills, washing dishes, cleaning countertops, stove tops, tabletops, bathroom counters, sinks, shower doors, mirrors, and windows.
-- Super Absorbent: Capable of holding up to 20 times their weight in liquid, these cloths are perfect for quick and efficient cleaning.
-- Reusable & Long-Lasting: Designed for daily use, eSun Dishcloths can be machine washed, disinfected in the dishwasher, or microwaved, ensuring they stay fresh and hygienic for repeated use.
-- Quick-Drying: The porous structure allows the cloths to dry rapidly, preventing odors and bacterial growth.
-- Stylish Design: Featuring beautiful colored digital patterns, these cloths add a touch of elegance to your kitchen while being highly functional.
+When wet, the cloth becomes soft, flexible, and highly absorbent, making it suitable for wiping spills, washing dishes, cleaning countertops, sinks, tables, and other household surfaces. After use, it can be rinsed, dried, and reused for repeated cleaning tasks.
 
+A key feature is the customizable printed surface. Different patterns, illustrations, colors, logos, and seasonal designs can be applied to create distinctive retail collections or private-label products.
+
+Custom patterns, colors, sizes, logos, and retail packaging are available for OEM and private-label projects.
+
+## Product Features
+
+- **70% Cellulose + 30% Cotton** – Combines the absorbency of wood pulp cellulose with the flexibility of cotton.
+- **High Water Absorbency** – Quickly absorbs water, spills, and everyday kitchen liquids.
+- **Custom Printed Designs** – Supports customized patterns, illustrations, colors, and branding.
+- **Soft & Flexible When Wet** – Easy to squeeze, wipe, and handle during cleaning.
+- **Reusable & Easy to Clean** – Can be rinsed and reused for everyday household cleaning.
+- **Biodegradable Material** – Cellulose and cotton construction provides an alternative to conventional synthetic disposable wipes.
+- **Multi-Purpose Use** – Suitable for dishes, countertops, sinks, tables, kitchens, bathrooms, and general surface cleaning.
+- **OEM & Private Label Available** – Custom size, shape, printing, logo, multipack configuration, and retail packaging are available.
