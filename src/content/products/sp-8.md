@@ -1,10 +1,26 @@
 ---
-title: "Temperature Controlled Scrub sponge"
-description: "Esun is excited to present our innovative Multi-Purpose Cleaning Sponge, a versatile and eco-friendly solution for all your cleaning needs"
+title: "Temperature Controlled Scrub Sponge"
+description: "The Temperature-Responsive Cleaning Sponge features innovative FlexTexture polymer foam that changes firmness according to water temperature. It stays firm in cold water for tougher scrubbing and becomes softer in warm water for lighter cleaning tasks, providing versatile cleaning performance for kitchens, cookware, dishes, appliances, and household surfaces."
 category: sponges
 sku: "sp-8"
-material: "FlexTexture (polymer foam)"
-size: "OEM"
+itemNo: "EHH015"
+specs:
+  - label: "Item no"
+    value: "EHH015"
+  - label: "Material"
+    value: "FlexTexture Polymer Foam"
+  - label: "Size"
+    value: "OEM / Customizable"
+  - label: "Texture"
+    value: "Temperature-Responsive"
+  - label: "Cold Water"
+    value: "Firmer Texture"
+  - label: "Warm Water"
+    value: "Softer Texture"
+  - label: "Color"
+    value: "Custom Colors Available"
+  - label: "Application"
+    value: "Kitchen & Household Cleaning"
 images:
   - /images/products/sponges/sp-8/01.jpg
   - /images/products/sponges/sp-8/02.jpg
@@ -13,35 +29,27 @@ images:
   - /images/products/sponges/sp-8/05.jpg
   - /images/products/sponges/sp-8/06.jpg
   - /images/products/sponges/sp-8/07.jpg
-features:
-  - "Dual-Texture Design:"
-  - "Firm in Cold Water: Perfect for tough scrubbing tasks, the sponge becomes firm in cold water, allowing it to remove stubborn debris and grease without the need for harsh chemicals."
-  - "Soft in Warm Water: When used in warm water, the sponge softens, making it ideal for light cleaning and delicate surfaces."
-  - "Eco-Friendly Material:"
-  - "Made from sustainable and biodegradable materials, Esun's cleaning sponge is an environmentally responsible choice for conscious consumers."
-  - "Durable and Long-Lasting:"
-  - "Constructed from high-quality, wear-resistant materials, this sponge is built to withstand daily use and maintain its effectiveness over time."
-  - "Machine Washable:"
-  - "Easy to clean and maintain, the sponge is machine washable, ensuring it stays fresh and hygienic for repeated use."
-  - "Non-Abrasive and Scratch-Free:"
-  - "The sponge provides excellent cleaning power without scratching or damaging delicate surfaces, making it safe for use on glassware, cookware, appliances, and more."
 draft: false
 order: 8
 ---
 
-Esun is excited to present our innovative Multi-Purpose Cleaning Sponge, a versatile and eco-friendly solution for all your cleaning needs. Designed to adapt to various cleaning tasks, this sponge is crafted from high-quality, durable materials that ensure exceptional performance and longevity. Whether you're tackling tough kitchen grease or gently cleaning delicate surfaces, Esun's cleaning sponge is the ultimate tool for a spotless home.
+## Product Description
 
-## Key features
+The Temperature-Responsive Cleaning Sponge is a versatile cleaning tool designed to adapt its texture according to water temperature.
 
-- Dual-Texture Design:
-- Firm in Cold Water: Perfect for tough scrubbing tasks, the sponge becomes firm in cold water, allowing it to remove stubborn debris and grease without the need for harsh chemicals.
-- Soft in Warm Water: When used in warm water, the sponge softens, making it ideal for light cleaning and delicate surfaces.
-- Eco-Friendly Material:
-- Made from sustainable and biodegradable materials, Esun's cleaning sponge is an environmentally responsible choice for conscious consumers.
-- Durable and Long-Lasting:
-- Constructed from high-quality, wear-resistant materials, this sponge is built to withstand daily use and maintain its effectiveness over time.
-- Machine Washable:
-- Easy to clean and maintain, the sponge is machine washable, ensuring it stays fresh and hygienic for repeated use.
-- Non-Abrasive and Scratch-Free:
-- The sponge provides excellent cleaning power without scratching or damaging delicate surfaces, making it safe for use on glassware, cookware, appliances, and more.
+In cold water, the polymer foam maintains a firmer texture, providing additional scrubbing action for grease, food residue, and stubborn everyday dirt. When used in warm water, the material becomes softer and more flexible, making it suitable for lighter wiping and general cleaning tasks.
 
+This temperature-responsive design allows one sponge to handle different cleaning needs around the kitchen and home. It can be used for dishes, cookware, sinks, countertops, appliances, and other washable surfaces.
+
+Size, shape, color, logo, and retail packaging can be customized for wholesale, retail, OEM, and private-label requirements.
+
+## Product Features
+
+- **Temperature-Responsive Texture** – Changes firmness according to water temperature for different cleaning tasks.
+- **Firm in Cold Water** – Provides stronger scrubbing action for grease, food residue, and stubborn dirt.
+- **Soft in Warm Water** – Becomes softer and more flexible for lighter everyday cleaning.
+- **Multi-Purpose Cleaning** – Suitable for dishes, cookware, sinks, countertops, appliances, and general household cleaning.
+- **Flexible Polymer Foam** – Designed to provide a comfortable grip and adaptable cleaning performance.
+- **Durable & Reusable** – Suitable for repeated cleaning applications when properly used and maintained.
+- **Easy to Rinse** – Can be rinsed after use for convenient everyday maintenance.
+- **OEM & Private Label Available** – Size, shape, color, logo, packaging, and product configurations can be customized.
