@@ -1,0 +1,35 @@
+# robots.txt for koceancleaning.com
+# All search engines and AI crawlers are welcome.
+
+User-agent: *
+Allow: /
+
+# Explicitly allow AI / LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://koceancleaning.com/sitemap-index.xml

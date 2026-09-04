@@ -24,7 +24,7 @@ import urllib.error
 
 REPO = "zlxsss147-cmd/koceancleaning.com"
 API = f"https://api.github.com/repos/{REPO}"
-COMMIT_MSG = "Add internationally certified quality certificates banner to the homepage"
+COMMIT_MSG = "Add SEO foundation: custom sitemap generation, robots.txt allowing search+AI crawlers, and og.png social share card"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
