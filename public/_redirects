@@ -8,8 +8,8 @@
 /products/ehc018 /products/car-wash-brush/ 301
 /products/ehc021/ /products/figure-8-scrub-sponge/ 301
 /products/ehc021 /products/figure-8-scrub-sponge/ 301
-/products/ehc023/ /products/twisted-yarn-towel/ 301
-/products/ehc023 /products/twisted-yarn-towel/ 301
+/products/ehc023/ /products/short-twist-microfiber-car-drying-towel/ 301
+/products/ehc023 /products/short-twist-microfiber-car-drying-towel/ 301
 /products/ehc024/ /products/chamois-cloth/ 301
 /products/ehc024 /products/chamois-cloth/ 301
 /products/ehf002/ /products/microfiber-wet-mop-pad-with-zigzag/ 301
@@ -70,3 +70,5 @@
 /products/sp-8 /products/temperature-controlled-scrub-sponge/ 301
 /products/car-wash-brush/ /products/telescopic-microfiber-car-cleaning-duster/ 301
 /products/car-wash-brush /products/telescopic-microfiber-car-cleaning-duster/ 301
+/products/twisted-yarn-towel/ /products/short-twist-microfiber-car-drying-towel/ 301
+/products/twisted-yarn-towel /products/short-twist-microfiber-car-drying-towel/ 301
