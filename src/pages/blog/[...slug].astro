@@ -141,6 +141,22 @@ const related = (await getCollection('blog', ({ data }) => !data.draft && data.c
     font-size: 1.45rem;
     margin: 40px 0 16px;
   }
+  .article-body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    margin: 28px 0 8px;
+  }
+  .article-body img + em {
+    display: block;
+    color: var(--ink-muted);
+    font-size: 0.85rem;
+    font-style: normal;
+    text-align: center;
+    margin: 0 0 28px;
+  }
   .article-body h3 {
     font-size: 1.18rem;
     margin: 28px 0 12px;

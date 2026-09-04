@@ -24,7 +24,7 @@ import urllib.error
 
 REPO = "zlxsss147-cmd/koceancleaning.com"
 API = f"https://api.github.com/repos/{REPO}"
-COMMIT_MSG = "Add 4 wet-wipes products (EHH195, EHF072, EHH402, EHH224) and 3 home-series products (EHH369, EHH377, EHH310) with images and full specs; expand footer nav to all 7 categories"
+COMMIT_MSG = "Add Knowledge Hub blog article 'What Is OEKO-TEX?' with 4 editorial illustrations + article image styling"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
