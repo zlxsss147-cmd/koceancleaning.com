@@ -24,7 +24,7 @@ import urllib.error
 
 REPO = "zlxsss147-cmd/koceancleaning.com"
 API = f"https://api.github.com/repos/{REPO}"
-COMMIT_MSG = "Replace 7 homepage category cover images with real product-photo collages (16:10)"
+COMMIT_MSG = "Revert homepage category cover images to original placeholder graphics"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
