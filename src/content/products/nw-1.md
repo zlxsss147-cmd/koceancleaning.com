@@ -1,38 +1,54 @@
 ---
-title: "Non-Woven Microfilament Wipes in roll"
-description: "Color: white The E-Sun Single-Use Microfiber Rolled Wipe is a high-performance cleaning solution designed for optimal surface disinfection"
+title: "Non-Woven Microfilament Wipes in Roll"
+description: "The Single-Use Non-Woven Microfiber Wipes on Roll are designed for efficient and hygienic surface cleaning in healthcare, commercial, and professional environments. Made from a 70% polyester and 30% polyamide microfiber blend, the wipes provide effective dirt pickup, good absorbency, and convenient tear-off dispensing for everyday cleaning and disinfection protocols."
 category: nonwovens
 sku: "nw-1"
-material: "70% polyester, 30% polyamide"
-size: "15*20CMx100pcs"
-weight: "50gsm"
-packing: "24 rolls per carton"
+itemNo: "EHH231"
+specs:
+  - label: "Item no"
+    value: "EHH231"
+  - label: "Material"
+    value: "70% Polyester + 30% Polyamide"
+  - label: "Size"
+    value: "15 × 20 cm × 100 pcs"
+  - label: "Weight"
+    value: "50 GSM"
+  - label: "Color"
+    value: "White"
+  - label: "Format"
+    value: "Perforated Roll"
+  - label: "Usage"
+    value: "Single Use"
+  - label: "Packing"
+    value: "24 Rolls/Carton"
 images:
   - /images/products/nonwovens/nw-1/01.jpg
   - /images/products/nonwovens/nw-1/02.jpg
   - /images/products/nonwovens/nw-1/03.jpg
   - /images/products/nonwovens/nw-1/04.jpg
   - /images/products/nonwovens/nw-1/05.jpg
-features:
-  - "Superior Cleaning Power:Removes over 99.9% of pathogens, including MRSA, VRE, and C. difficile, with water alone."
-  - "Single-Use Design:Eliminates the risk of cross-contamination and ensures optimal performance with every use."
-  - "High Absorbency & Durability:Constructed with 50GSM hydroentangled microfibers for exceptional absorbency and release."
-  - "Time-Saving:Pre-prepared charging buckets enable 25-30% faster cleaning, improving efficiency in busy facilities."
-  - "Versatile Use:Suitable for hospitals, nurseries, and households, especially in areas requiring chemical sensitivity."
-  - "Eco-Friendly & Hygienic:Reduces the need for repeated laundering, maintaining effectiveness and minimizing environmental impact."
 draft: false
 order: 1
 ---
 
-Color: white
-The E-Sun Single-Use Microfiber Rolled Wipe is a high-performance cleaning solution designed for optimal surface disinfection. Made from 50GSM hydroentangled synthetic microfibers, these wipes are highly durable, absorbent, and compatible with all disinfectant solutions. Proven to remove 99.9% of infectious organisms, including MRSA, VRE, and C. difficile, even when used with water alone, they are ideal for sensitive clinical environments, hospitals, and household cleaning. Their single-use design ensures maximum hygiene, reduces cross-contamination risks, and speeds up cleaning processes by 25-30%.
+## Product Description
 
-## Key features
+The Non-Woven Microfiber Wipes on Roll provide a practical single-use solution for surface cleaning in hospitals, healthcare facilities, laboratories, commercial environments, and other areas where controlled cleaning procedures are important.
 
-- Superior Cleaning Power:Removes over 99.9% of pathogens, including MRSA, VRE, and C. difficile, with water alone.
-- Single-Use Design:Eliminates the risk of cross-contamination and ensures optimal performance with every use.
-- High Absorbency & Durability:Constructed with 50GSM hydroentangled microfibers for exceptional absorbency and release.
-- Time-Saving:Pre-prepared charging buckets enable 25-30% faster cleaning, improving efficiency in busy facilities.
-- Versatile Use:Suitable for hospitals, nurseries, and households, especially in areas requiring chemical sensitivity.
-- Eco-Friendly & Hygienic:Reduces the need for repeated laundering, maintaining effectiveness and minimizing environmental impact.
+Made from 50 GSM hydroentangled microfiber, each wipe combines fine synthetic fibers with a durable non-woven structure to provide good liquid absorption and effective pickup of dust, dirt, grease, and surface residue.
 
+The convenient 15 × 20 cm perforated wipe format allows individual sheets to be quickly dispensed from the roll. With 100 wipes per roll, the system is easy to store, distribute, and integrate into routine cleaning workflows.
+
+The wipes can be used with compatible cleaning or disinfectant solutions according to facility protocols, while their single-use format helps support cross-contamination control by allowing a fresh wipe to be used for each defined cleaning task or area.
+
+## Product Features
+
+- **Hydroentangled Microfiber Structure** – Fine microfiber construction provides effective contact with surfaces for dirt and residue pickup.
+- **50 GSM Non-Woven Material** – Provides a balance of absorbency, flexibility, and strength for routine surface cleaning.
+- **Single-Use Cleaning** – Fresh wipes can be used between defined areas or tasks to support contamination-control procedures.
+- **Good Liquid Absorbency** – Absorbs water and cleaning solutions for wet and damp wiping applications.
+- **Convenient Perforated Roll** – Individual 15 × 20 cm sheets can be quickly separated when required.
+- **100 Wipes per Roll** – Convenient format for professional cleaning workflows and high-use environments.
+- **Suitable for Cleaning & Disinfection Protocols** – Can be paired with compatible disinfectant or cleaning solutions according to application requirements.
+- **Versatile Applications** – Suitable for healthcare facilities, laboratories, commercial facilities, professional cleaning, and general surface wiping.
+- **OEM & Private Label Available** – Wipe size, GSM, roll count, color, packaging, label, and other specifications can be customized.
