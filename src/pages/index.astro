@@ -111,6 +111,38 @@ const pillars = [
     </div>
   </section>
 
+  <!-- ADVANCED MANUFACTURING & QC -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Inside Our Production</p>
+        <h2>Advanced Manufacturing &amp; Quality Control</h2>
+        <p>Every Kocean product is made in our partner facility in Fujian, China — a vertical operation that takes raw fiber all the way to finished, inspected goods. Automated lines, an in-house QC lab and a documented process keep quality consistent, batch after batch.</p>
+      </div>
+      <div class="manuf-banner">
+        <img src="/images/home/advanced-manufacturing.jpg" alt="Kocean advanced manufacturing production line and quality control" loading="lazy" />
+      </div>
+      <div class="manuf-points">
+        <div class="manuf-point">
+          <h3>Automated production lines</h3>
+          <p>Half- and full-automatic equipment delivers stable, repeatable output across every SKU.</p>
+        </div>
+        <div class="manuf-point">
+          <h3>In-house QC lab</h3>
+          <p>Tensile, abrasion, absorbency and color-fastness testing on representative samples.</p>
+        </div>
+        <div class="manuf-point">
+          <h3>Documented process</h3>
+          <p>SOPs at every station — from knitting and nonwoven formation to final packing.</p>
+        </div>
+        <div class="manuf-point">
+          <h3>Pre-shipment inspection</h3>
+          <p>AQL sampling on 100% of orders before container loading and handover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- WHY / PILLARS -->
   <section class="section section--soft">
     <div class="container">
@@ -373,6 +405,40 @@ const pillars = [
     color: var(--ink-muted);
   }
 
+  /* Advanced Manufacturing & QC */
+  .manuf-banner {
+    margin: 8px 0 36px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .manuf-banner img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+  .manuf-points {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .manuf-point {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    box-shadow: var(--shadow-sm);
+  }
+  .manuf-point h3 {
+    font-size: 1.02rem;
+    color: var(--teal-800);
+    margin-bottom: 8px;
+  }
+  .manuf-point p {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+  }
+
   /* Factory */
   .factory-inner {
     display: grid;
@@ -470,11 +536,13 @@ const pillars = [
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
     .cat-grid, .pillar-grid, .post-grid { grid-template-columns: 1fr 1fr; }
+    .manuf-points { grid-template-columns: 1fr 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .factory-inner { grid-template-columns: 1fr; }
   }
   @media (max-width: 560px) {
     .cat-grid, .pillar-grid, .post-grid { grid-template-columns: 1fr; }
+    .manuf-points { grid-template-columns: 1fr; }
     .cta-box { flex-direction: column; text-align: center; }
   }
 </style>
