@@ -1,18 +1,41 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { BLOG_CATEGORIES, categorySlug } from '../../utils/blogCategories';
+import { BLOG_CATEGORIES, categorySlug } from '../../../utils/blogCategories';
 
-const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+export async function getStaticPaths() {
+  return BLOG_CATEGORIES.map((category) => ({
+    params: { category: categorySlug(category) },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+
+const posts = (
+  await getCollection('blog', ({ data }) => !data.draft && data.category === category)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Knowledge Hub" description="Practical buying guides and material knowledge for microfiber cleaning products and nonwovens — written for professional buyers.">
+<BaseLayout
+  title={`${category} — Knowledge Hub`}
+  description={`Articles about ${category} — material science, product selection and sourcing guidance for professional cleaning products.`}
+>
   <section class="page-hero">
     <div class="container">
-      <p class="kicker">Knowledge Hub</p>
-      <h1>Buying guides for professional cleaning products</h1>
-      <p class="lead">Material science, product selection and sourcing guidance — written for buyers, distributors and brands.</p>
+      <p class="kicker">Knowledge Hub · {category}</p>
+      <h1>{category}</h1>
+      <p class="lead">
+        {category === 'Nonwoven Materials'
+          ? 'How nonwoven fabrics are made, how they differ, and which one fits your cleaning product.'
+          : category === 'Buying Guides'
+            ? 'Practical checklists for choosing and sourcing microfiber and nonwoven cleaning products.'
+            : category === 'Applications'
+              ? 'Where different cleaning materials work best — from homes to industrial settings.'
+              : category === 'OEM & Quality'
+                ? 'Manufacturing, quality control and private-label sourcing essentials for brands and distributors.'
+              : 'Safety standards, certifications and sustainability for textile and cleaning products.'}
+      </p>
     </div>
   </section>
 
@@ -21,19 +44,19 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
       <div class="filter-bar">
         <a
           href="/blog/"
-          class:list={['filter-chip', 'is-active']}
+          class="filter-chip"
         >All</a>
         {BLOG_CATEGORIES.map((c) => (
           <a
             href={`/blog/category/${categorySlug(c)}/`}
-            class="filter-chip"
+            class:list={['filter-chip', { 'is-active': c === category }]}
           >{c}</a>
         ))}
       </div>
 
-      {allPosts.length > 0 ? (
+      {posts.length > 0 ? (
         <div class="post-grid">
-          {allPosts.map((post) => (
+          {posts.map((post) => (
             <a href={`/blog/${post.slug}/`} class="card post-card">
               <div class="post-meta">
                 <span class="post-cat">{post.data.category}</span>
@@ -48,7 +71,7 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
           ))}
         </div>
       ) : (
-        <p class="empty">Articles are being prepared. Check back soon.</p>
+        <p class="empty">No articles in this category yet. Check back soon.</p>
       )}
     </div>
   </section>
