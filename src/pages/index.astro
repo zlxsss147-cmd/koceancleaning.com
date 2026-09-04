@@ -143,8 +143,29 @@ const pillars = [
     </div>
   </section>
 
-  <!-- WHY / PILLARS -->
+  <!-- CERTIFICATIONS -->
   <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Certified Quality</p>
+        <h2>Audited, tested and internationally certified</h2>
+        <p>Our processes and products are verified by independent bodies — from OEKO-TEX® Standard 100 and ISO 9001 to SGS, TÜV and Intertek test reports.</p>
+      </div>
+      <div class="cert-banner">
+        <img src="/images/home/certifications.jpg" alt="Kocean product and factory certificates — OEKO-TEX, ISO 9001, SGS, TÜV and Intertek" loading="lazy" />
+      </div>
+      <div class="cert-tags">
+        <span>OEKO-TEX® Standard 100</span>
+        <span>ISO 9001:2015</span>
+        <span>SGS Verified</span>
+        <span>TÜV Rheinland</span>
+        <span>Intertek Tested</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / PILLARS -->
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <p class="kicker">Why Kocean</p>
@@ -437,6 +458,39 @@ const pillars = [
   .manuf-point p {
     font-size: 0.9rem;
     color: var(--ink-muted);
+  }
+
+  /* Certifications */
+  .cert-banner {
+    margin: 8px 0 24px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 12px;
+  }
+  .cert-banner img {
+    width: 100%;
+    display: block;
+    height: auto;
+    border-radius: calc(var(--radius) - 4px);
+  }
+  .cert-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .cert-tags span {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--teal-800);
+    box-shadow: var(--shadow-sm);
   }
 
   /* Factory */
