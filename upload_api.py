@@ -24,7 +24,7 @@ import urllib.error
 
 REPO = "zlxsss147-cmd/koceancleaning.com"
 API = f"https://api.github.com/repos/{REPO}"
-COMMIT_MSG = "Add Google Search Console ownership verification file (google69d0b4088731f5fb.html)"
+COMMIT_MSG = "Add Products dropdown menu to header navigation showing 7 product categories"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 

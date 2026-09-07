@@ -1,5 +1,5 @@
 ---
-import { SITE, COMPANY, NAV } from '../data/site';
+import { SITE, COMPANY, NAV, PRODUCT_CATEGORIES } from '../data/site';
 import '../styles/global.css';
 
 interface Props {
@@ -63,9 +63,33 @@ const pageImage = image ?? SITE.ogImage;
           />
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-          {NAV.map((item) => (
-            <a href={item.href} class:list={{ 'is-active': Astro.url.pathname === item.href }}>{item.label}</a>
-          ))}
+          {NAV.map((item) => {
+            if (item.href === '/products/') {
+              const isProductsActive =
+                Astro.url.pathname === '/products/' || Astro.url.pathname.startsWith('/products/');
+              return (
+                <div class="nav-drop">
+                  <a
+                    href="/products/"
+                    class:list={{ 'nav-drop__trigger': true, 'is-active': isProductsActive }}
+                    aria-haspopup="true"
+                  >
+                    Products
+                    <svg class="nav-drop__caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                  </a>
+                  <div class="nav-drop__menu" role="menu" aria-label="Product categories">
+                    {PRODUCT_CATEGORIES.map((cat) => (
+                      <a href={`/products/#${cat.slug}`} role="menuitem">{cat.title}</a>
+                    ))}
+                    <a href="/products/" role="menuitem" class="nav-drop__all">View all products</a>
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <a href={item.href} class:list={{ 'is-active': Astro.url.pathname === item.href }}>{item.label}</a>
+            );
+          })}
         </nav>
         <a href="/contact/" class="btn btn--primary nav-cta">Get a Quote</a>
       </div>
@@ -178,6 +202,79 @@ const pageImage = image ?? SITE.ogImage;
   .nav-cta {
     padding: 10px 22px;
     font-size: 0.92rem;
+  }
+
+  /* Products dropdown */
+  .nav-drop {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .nav-drop__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .nav-drop__caret {
+    transition: transform 0.18s ease;
+    color: var(--ink-muted);
+  }
+  .nav-drop:hover .nav-drop__caret,
+  .nav-drop:focus-within .nav-drop__caret {
+    transform: rotate(180deg);
+  }
+  .nav-drop__menu {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    min-width: 252px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
+    z-index: 80;
+  }
+  .nav-drop:hover .nav-drop__menu,
+  .nav-drop:focus-within .nav-drop__menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-drop__menu a {
+    display: block;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    border-bottom: none;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .nav-drop__menu a:hover {
+    background: var(--teal-50);
+    color: var(--teal-700);
+  }
+  .nav-drop__menu a.nav-drop__all {
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    margin-top: 5px;
+    padding-top: 10px;
+    color: var(--teal-700);
+    font-weight: 600;
+  }
+  .nav-drop__menu a.nav-drop__all:hover {
+    color: var(--orange-500);
   }
 
   .site-footer {
