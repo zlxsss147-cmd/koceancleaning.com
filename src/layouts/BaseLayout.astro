@@ -210,6 +210,16 @@ const pageImage = image ?? SITE.ogImage;
     display: flex;
     align-items: center;
   }
+  .nav-drop::before {
+    /* Hover bridge: 覆盖 trigger 与菜单之间的空隙，鼠标平滑移入菜单不中断 hover */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    width: 300px;
+    height: 22px;
+  }
   .nav-drop__trigger {
     display: inline-flex;
     align-items: center;

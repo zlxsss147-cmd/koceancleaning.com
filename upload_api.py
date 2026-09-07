@@ -24,7 +24,7 @@ import urllib.error
 
 REPO = "zlxsss147-cmd/koceancleaning.com"
 API = f"https://api.github.com/repos/{REPO}"
-COMMIT_MSG = "Add Products dropdown menu to header navigation showing 7 product categories"
+COMMIT_MSG = "Fix Products dropdown hover gap: add hover bridge so menu items stay reachable and clickable"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
