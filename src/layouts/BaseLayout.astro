@@ -12,6 +12,36 @@ const { title, description, image } = Astro.props;
 const pageTitle = title ? `${title} | ${SITE.title}` : SITE.title;
 const pageDesc = description ?? SITE.description;
 const pageImage = image ?? SITE.ogImage;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+
+// Site-wide structured data. Helps search engines and AI assistants identify
+// the organisation behind the content and its official web presence.
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE.url}/#organization`,
+  name: COMPANY.name,
+  legalName: COMPANY.legalName,
+  url: SITE.url,
+  logo: new URL('/images/logo.png', SITE.url).href,
+  email: COMPANY.email,
+  telephone: COMPANY.phone,
+  foundingDate: String(COMPANY.since),
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Yiwu',
+    addressRegion: 'Zhejiang',
+    addressCountry: 'CN',
+  },
+  sameAs: [COMPANY.linkedin],
+};
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Kocean Cleaning',
+  url: SITE.url,
+  publisher: { '@id': `${SITE.url}/#organization` },
+};
 ---
 
 <!DOCTYPE html>
@@ -38,7 +68,10 @@ const pageImage = image ?? SITE.ogImage;
     <meta name="twitter:description" content={pageDesc} />
     <meta name="twitter:image" content={new URL(pageImage, SITE.url)} />
 
-    <link rel="canonical" href={new URL(Astro.url.pathname, SITE.url)} />
+    <link rel="canonical" href={canonical} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <slot name="head" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

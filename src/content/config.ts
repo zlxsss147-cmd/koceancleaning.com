@@ -17,6 +17,15 @@ const blog = defineCollection({
       'Industry & Sustainability',
     ]),
     tags: z.array(z.string()).optional(),
+    // Optional FAQ pairs, used to emit FAQPage structured data on the post page.
+    faq: z
+      .array(
+        z.object({
+          q: z.string(),
+          a: z.string(),
+        })
+      )
+      .optional(),
     draft: z.boolean().default(false),
   }),
 });
