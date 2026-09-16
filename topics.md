@@ -30,3 +30,5 @@
 
 ## 已发布（Published）
 - [x] Spunlace vs Spunbond vs Meltblown vs Needle-Punched: How to Choose a Nonwoven for Your Cleaning Product
+- [x] What Is OEKO-TEX®? The Textile Safety Standard Buyers Keep Asking About
+- [x] How to Vet a Cleaning Products Manufacturer: A Buyer's 7-Point Checklist
