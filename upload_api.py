@@ -24,7 +24,7 @@ import urllib.error
 
 REPO = "zlxsss147-cmd/koceancleaning.com"
 API = f"https://api.github.com/repos/{REPO}"
-COMMIT_MSG = "Add OEM supplier vetting guide blog post with 3 editorial infographics, plus Article/FAQ/Breadcrumb structured data"
+COMMIT_MSG = "Sync package-lock.json with package.json (remove stale sitemap dependency)"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
