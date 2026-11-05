@@ -5,7 +5,7 @@ pubDate: 2026-10-28
 updatedDate: 2026-10-28
 category: "Buying Guides"
 tags: ["how to choose microfiber cloth", "microfiber buying guide", "GSM microfiber", "microfiber weave", "80/20 vs 70/30 microfiber", "cleaning cloth specs", "janitorial supplies", "sourcing", "Microfiber Cloths"]
-heroImage: "/images/blog/how-to-choose-microfiber/cover.png"
+heroImage: "/images/blog/how-to-choose-microfiber/how-to-choose-microfiber-hero.jpg"
 faq:
   - q: "What GSM microfiber cloth should I buy?"
     a: "200–300 GSM for general wiping and dusting, 300–350 GSM for glass and heavy-duty, 350+ GSM for buffing and polishing. Heavier is not automatically better — glass and detailing want a denser, tighter weave, not just more grams."
