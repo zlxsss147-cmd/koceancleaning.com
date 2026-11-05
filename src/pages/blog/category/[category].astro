@@ -34,7 +34,7 @@ const posts = (
               ? 'Where different cleaning materials work best — from homes to industrial settings.'
               : category === 'OEM & Quality'
                 ? 'Manufacturing, quality control and private-label sourcing essentials for brands and distributors.'
-              : 'Safety standards, certifications and sustainability for textile and cleaning products.'}
+                : 'Safety standards, certifications and sustainability for textile and cleaning products.'}
       </p>
     </div>
   </section>
@@ -58,15 +58,26 @@ const posts = (
         <div class="post-grid">
           {posts.map((post) => (
             <a href={`/blog/${post.slug}/`} class="card post-card">
-              <div class="post-meta">
-                <span class="post-cat">{post.data.category}</span>
-                <time datetime={post.data.pubDate.toISOString()}>
-                  {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                </time>
+              <img
+                src={post.data.heroImage ?? '/og.png'}
+                alt={post.data.title}
+                class="post-thumb"
+                width="600"
+                height="340"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="post-body">
+                <div class="post-meta">
+                  <span class="post-cat">{post.data.category}</span>
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                  </time>
+                </div>
+                <h2>{post.data.title}</h2>
+                <p>{post.data.description}</p>
+                <span class="post-link">Read more →</span>
               </div>
-              <h2>{post.data.title}</h2>
-              <p>{post.data.description}</p>
-              <span class="post-link">Read more →</span>
             </a>
           ))}
         </div>
@@ -125,10 +136,32 @@ const posts = (
     gap: 22px;
   }
   .post-card {
-    padding: 26px;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
     color: var(--ink);
+    display: flex;
+    flex-direction: column;
   }
   .post-card:hover { color: var(--ink); }
+  .post-thumb {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    background: var(--teal-50);
+    transition: transform 0.4s ease;
+  }
+  .post-card:hover .post-thumb { transform: scale(1.04); }
+  .post-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
   .post-meta {
     display: flex;
     justify-content: space-between;
@@ -149,7 +182,7 @@ const posts = (
     margin-bottom: 10px;
     line-height: 1.35;
   }
-  .post-card p {
+  .post-card .post-body p {
     color: var(--ink-muted);
     font-size: 0.92rem;
     margin-bottom: 16px;
@@ -158,6 +191,7 @@ const posts = (
     color: var(--teal-700);
     font-weight: 600;
     font-size: 0.9rem;
+    margin-top: auto;
   }
   .empty {
     text-align: center;
