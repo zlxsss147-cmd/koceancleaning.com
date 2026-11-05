@@ -6,6 +6,17 @@ updatedDate: 2026-09-04
 category: "Industry & Sustainability"
 tags: ["OEKO-TEX", "textile certification", "harmful substances", "Standard 100", "product safety", "sourcing", "quality control"]
 heroImage: "/images/blog/oeko-tex/oeko-tex-hero.jpg"
+faq:
+  - q: "Does OEKO-TEX mean a product is organic?"
+    a: "No. STANDARD 100 is about safety from harmful substances, not the fiber's organic status. Organic content is covered by a separate standard such as GOTS."
+  - q: "Does OEKO-TEX test the whole product or just the fabric?"
+    a: "The whole product — threads, buttons, zippers, prints and accessories are all tested. If one component fails, the entire article fails."
+  - q: "How long is an OEKO-TEX certificate valid?"
+    a: "Typically 12 months. It must be renewed annually, and the limit values are reviewed at least once a year, so always ask for a currently valid certificate rather than an old copy."
+  - q: "Is OEKO-TEX the same as GOTS?"
+    a: "No. GOTS covers organic content and the organic processing chain; OEKO-TEX STANDARD 100 covers safety from harmful substances. They answer different questions, and a product can hold one without the other."
+  - q: "Should I require OEKO-TEX for cleaning products?"
+    a: "For anything that contacts skin — towels, cloths, wipes — it is a strong, low-cost quality signal and a market-access requirement in many regions. Ask for a currently valid certificate with the correct product class."
 draft: false
 ---
 
