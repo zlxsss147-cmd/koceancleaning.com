@@ -5,6 +5,7 @@ pubDate: 2026-09-04
 updatedDate: 2026-09-04
 category: "Industry & Sustainability"
 tags: ["OEKO-TEX", "textile certification", "harmful substances", "Standard 100", "product safety", "sourcing", "quality control"]
+heroImage: "/images/blog/oeko-tex/oeko-tex-hero.jpg"
 draft: false
 ---
 
