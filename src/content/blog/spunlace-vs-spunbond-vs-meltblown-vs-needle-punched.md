@@ -6,6 +6,15 @@ updatedDate: 2026-08-27
 category: "Nonwoven Materials"
 tags: ["nonwoven", "spunlace", "spunbond", "meltblown", "needle-punched", "material selection", "GSM"]
 heroImage: "/images/blog/nonwoven-types-comparison/nonwoven-comparison-hero.jpg"
+faq:
+  - q: "Can a spunlace wipe be biodegradable?"
+    a: "Yes — a 100% viscose (or cotton) spunlace is compostable. Blends with PET are not, though they can be made partially bio-based with PLA. If flushable or compostable is a claim you need, state it up front because it changes the fiber choice."
+  - q: "Why does my PP spunbond bag repel water?"
+    a: "PP (polypropylene) is naturally hydrophobic. If you need it to absorb or wick, specify a hydrophilic finish — it is a standard, low-cost treatment that changes the behavior completely."
+  - q: "Which nonwoven is cheapest?"
+    a: "Spunbond (PP) is cheapest per square meter. But compare by function: a 40 gsm spunlace wipe and a 40 gsm spunbond sheet are not interchangeable, so cheapest only matters within one application."
+  - q: "Can nonwoven technologies be combined?"
+    a: "Almost always yes, and you should. Common composites are SMS (spunbond-meltblown-spunbond) for filtration and barrier, spunlace plus spunbond for a soft-top or scrubby-back wipe, and needle-punch plus scrim for a stable floor pad. Most real products are composites."
 draft: false
 ---
 
