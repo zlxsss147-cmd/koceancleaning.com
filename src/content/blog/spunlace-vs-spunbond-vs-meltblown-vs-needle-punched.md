@@ -5,6 +5,7 @@ pubDate: 2026-08-19
 updatedDate: 2026-08-27
 category: "Nonwoven Materials"
 tags: ["nonwoven", "spunlace", "spunbond", "meltblown", "needle-punched", "material selection", "GSM"]
+heroImage: "/images/blog/nonwoven-types-comparison/nonwoven-comparison-hero.jpg"
 draft: false
 ---
 
