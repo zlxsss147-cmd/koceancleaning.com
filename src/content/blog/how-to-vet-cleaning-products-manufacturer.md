@@ -5,7 +5,7 @@ pubDate: 2026-09-15
 updatedDate: 2026-09-15
 category: "OEM & Quality"
 tags: ["supplier vetting", "factory audit", "OEM cleaning products", "quality control", "MOQ", "sourcing China", "private label", "AQL"]
-heroImage: "/images/blog/supplier-vetting/01-seven-point-checklist.png"
+heroImage: "/images/blog/supplier-vetting/supplier-vetting-hero.jpg"
 faq:
   - q: "How long between first contact and goods on the water?"
     a: "Budget 10-14 weeks for a first development. Roughly three weeks for quoting and sampling, one week for approvals, four to six weeks for production, then consolidation and sailing. Repeat orders compress to about five to seven weeks."
