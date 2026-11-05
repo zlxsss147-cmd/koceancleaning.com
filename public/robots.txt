@@ -1,34 +1,31 @@
 # robots.txt for koceancleaning.com
-# All search engines and AI crawlers are welcome.
+# Goal: maximize discoverability for search engines AND AI/LLM search (GEO).
+# All crawlers are welcome to index. ai-train=no opts out of model training.
 
 User-agent: *
 Allow: /
 
-# Explicitly allow AI / LLM crawlers
+# Content signal (EU DSM Directive Art. 4): allow search indexing; opt out of AI
+# training; allow reference use by AI systems.
+Content-Signal: search=yes, ai-train=no, use=reference
+
+# Explicitly allow AI / LLM search crawlers so the site appears in AI answers (GEO)
 User-agent: GPTBot
 Allow: /
-
 User-agent: OAI-SearchBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
 User-agent: Google-Extended
 Allow: /
-
 User-agent: ClaudeBot
 Allow: /
-
 User-agent: Claude-Web
 Allow: /
-
 User-agent: Claude-SearchBot
 Allow: /
-
 User-agent: PerplexityBot
 Allow: /
-
 User-agent: CCBot
 Allow: /
 
