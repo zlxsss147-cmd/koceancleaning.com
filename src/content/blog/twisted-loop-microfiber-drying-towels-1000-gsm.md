@@ -60,7 +60,7 @@ Two consequences for buyers:
 
 For a different weave built for glass rather than bulk absorption, see our [waffle weave vs fish scale guide](/blog/waffle-weave-vs-fish-scale-glass-cleaning/).
 
-![The same twisted loop drying towel shown folded and unfolded — the twisted, rope-like pile is visible up close, from Kocean Cleaning.](/images/blog/twisted-loop-drying-towel/twisted-loop-drying-towel-full.jpg)
+![Close-up of a dark twisted loop microfiber drying towel lifting water from a wet car panel — the twisted, rope-like loop texture is visible, from Kocean Cleaning.](/images/blog/twisted-loop-drying-towel/twisted-loop-drying-towel-full.jpg)
 
 ## GSM vs towel size — the spec buyers confuse most
 
